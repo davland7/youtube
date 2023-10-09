@@ -9,7 +9,7 @@ const handler: Handler = async (event: HandlerEvent, context: HandlerContext) =>
   }
 
   try {
-    const response = await fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vRA5BiJUKJ9BCftgCP6UtKg9IifRTHfC7S0jdNF1s1do9YT6F2wpCJBQkWNQJUAclB5yDbEtq8VkypX/pub?gid=994685466&single=true&output=csv'/* process.env.GOOGLE_SHEETS_URL as string */);
+    const response = await fetch(process.env.GOOGLE_SHEETS_URL as string);
 
     if (!response.ok) {
       throw new Error(`Erreur lors de la récupération du CSV : ${response.status} ${response.statusText}`);
@@ -58,7 +58,7 @@ const handler: Handler = async (event: HandlerEvent, context: HandlerContext) =>
   } catch (error) {
     return {
       statusCode: 500,
-      body: JSON.stringify(error),
+      body: JSON.stringify(error)
     };
   }
 };
