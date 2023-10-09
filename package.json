@@ -1,0 +1,17 @@
+{
+  "name": "youtube",
+  "version": "0.0.1",
+  "description": "My YouTube channel",
+  "type": "module",
+  "scripts": {
+    "start": "netlify functions:serve"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "@netlify/functions": "^2.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.4"
+  }
+}
