@@ -19,3 +19,12 @@ import Layout from '../layouts/Layout.astro';
 		</form>
 	</main>
 </Layout>
+<script>
+	window.addEventListener("load", async () => {
+		const response = await fetch(`${import.meta.env.PUBLIC_API_URL ?? ''}/.netlify/functions/currencies`, {
+			method: 'POST'
+		})
+			.then(response => response.json())
+			.then(data => console.log(data));
+	});
+</script>

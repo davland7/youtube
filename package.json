@@ -3,8 +3,9 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "start": "netlify functions:serve",
+    "dev": "PUBLIC_API_URL=http://localhost:4444 astro dev",
+    "start": "astro dev",
+    "api": "netlify functions:serve -p 4444",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"

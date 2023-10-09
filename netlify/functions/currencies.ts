@@ -48,14 +48,12 @@ const handler: Handler = async (event: HandlerEvent, context: HandlerContext) =>
 
     return {
       statusCode: 200,
-      body: JSON.stringify(currencies),
       headers: {
-        'Content-Type': 'application/json',
-        'Cache-Control': 'public, max-age=1200, must-revalidate',
-        'Netlify-CDN-Cache-Control': 'public, max-age=1200, must-revalidate'
-      }
+        'Access-Control-Allow-Origin': process.env.ACCESS_CONTROL_ALLOW_ORIGIN as string
+      },
+      body: JSON.stringify(currencies)
     };
-  } catch (error) {
+  } catch (error: any) {
     return {
       statusCode: 500,
       body: JSON.stringify(error)
