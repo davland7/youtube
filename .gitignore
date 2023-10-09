@@ -1,3 +1,9 @@
+# build output
+dist/
+
+# generated types
+.astro/
+
 # dependencies
 node_modules/
 
@@ -16,5 +22,3 @@ pnpm-debug.log*
 
 # Local Netlify folder
 .netlify
-
-api.http

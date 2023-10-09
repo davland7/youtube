@@ -1,15 +1,17 @@
 {
   "name": "youtube",
-  "version": "0.0.1",
-  "description": "My YouTube channel",
   "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "start": "netlify functions:serve"
+    "dev": "astro dev",
+    "start": "netlify functions:serve",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "keywords": [],
-  "license": "ISC",
   "dependencies": {
-    "@netlify/functions": "^2.2.1"
+    "@netlify/functions": "^2.2.1",
+    "astro": "^3.2.4"
   },
   "devDependencies": {
     "@types/node": "^20.8.4"

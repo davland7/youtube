@@ -1,0 +1,11 @@
+# Get all currencies
+
+GET http://localhost:9999/.netlify/functions/currencies
+
+###
+
+POST http://localhost:9999/.netlify/functions/currencies
+
+###
+
+POST https://superb-sorbet-ca09c6.netlify.app/.netlify/functions/currencies

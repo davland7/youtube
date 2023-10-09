@@ -51,7 +51,7 @@ const handler: Handler = async (event: HandlerEvent, context: HandlerContext) =>
       body: JSON.stringify(currencies),
       headers: {
         'Content-Type': 'application/json',
-        'Cache-Control': 'public, max-age=0, must-revalidate',
+        'Cache-Control': 'public, max-age=1200, must-revalidate',
         'Netlify-CDN-Cache-Control': 'public, max-age=1200, must-revalidate'
       }
     };
