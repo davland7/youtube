@@ -49,6 +49,7 @@ const handler: Handler = async (event: HandlerEvent, context: HandlerContext) =>
     return {
       statusCode: 200,
       headers: {
+        'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': process.env.ACCESS_CONTROL_ALLOW_ORIGIN as string
       },
       body: JSON.stringify(currencies)

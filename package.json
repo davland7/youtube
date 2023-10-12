@@ -3,16 +3,10 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "api": "netlify functions:serve -p 4444",
-    "dev": "PUBLIC_API_URL=http://localhost:4444 astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "netlify dev -p 4444"
   },
   "dependencies": {
-    "@netlify/functions": "^2.2.1",
-    "astro": "^3.2.4"
+    "@netlify/functions": "^2.2.1"
   },
   "devDependencies": {
     "@types/node": "^20.8.4"
