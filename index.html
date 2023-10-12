@@ -12,7 +12,7 @@
       window.addEventListener("load", async() => {
         await fetch(`/.netlify/functions/currencies`, {
           method:"POST"
-        }).then(n => n.json()).then(n => console.log(n))});
+        }).then(res => res.json()).then(res => console.log(res))});
     </script>
 </head>
 <body>
