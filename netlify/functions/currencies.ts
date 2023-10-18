@@ -1,6 +1,4 @@
-import type { Handler, HandlerEvent, HandlerContext } from "@netlify/functions";
-
-const handler: Handler = async (event: HandlerEvent, context: HandlerContext) => {
+/* const handler: Handler = async (event: HandlerEvent, context: HandlerContext) => {
   try {
     const response = await fetch(process.env.GOOGLE_SHEETS_URL as string);
 
@@ -52,4 +50,4 @@ const handler: Handler = async (event: HandlerEvent, context: HandlerContext) =>
   }
 };
 
-export { handler };
+export { handler }; */
