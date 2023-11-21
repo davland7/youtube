@@ -7,13 +7,6 @@ const CORS_HEADERS = {
 
 const handler: Handler = async (event: HandlerEvent, context: HandlerContext) => {
   try {
-    if (event.httpMethod === 'OPTIONS') {
-      return {
-        statusCode: 200,
-        headers: CORS_HEADERS,
-      }
-    }
-
     const response = await fetch(process.env.GOOGLE_SHEETS_URL as string);
 
     const csvData = await response.text();
