@@ -1,10 +1,5 @@
 import type { Handler, HandlerEvent, HandlerContext } from "@netlify/functions";
 
-const CORS_HEADERS = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
-}
-
 const handler: Handler = async (event: HandlerEvent, context: HandlerContext) => {
   try {
     const response = await fetch(process.env.GOOGLE_SHEETS_URL as string);
@@ -43,8 +38,9 @@ const handler: Handler = async (event: HandlerEvent, context: HandlerContext) =>
     return {
       statusCode: 200,
       headers: {
-        ...CORS_HEADERS,
-        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': process.env.ACCESS_CONTROL_ALLOW_ORIGIN as string,
+        'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(currencies)
     };
