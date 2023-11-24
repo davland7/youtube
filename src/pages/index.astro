@@ -1,17 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '@layouts/Layout.astro';
+import Newletter from '@components/Newletter.tsx';
 ---
 
-<Layout title="Welcome to Astro." description="Home">
-	<header>
-		<div class="container m-auto max-w-4xl px-4 py-8">
-			<h1 class="text-6xl font-bold pt-4">@davland7</h1>
-			<p class="text-2xl pt-8">
-        <a href="/fr/convertisseur-de-devises">Convertiseur de devises</a>
-      </p>
-		</div>
-	</header>
-	<main>
-
+<Layout
+  title="Welcome to Astro."
+  description="Home">
+	<main class="fixed top-0 right-0 bottom-0 left-0 flex items-center justify-center">
+    <Newletter />
 	</main>
 </Layout>
