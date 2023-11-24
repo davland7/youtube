@@ -28,8 +28,8 @@ function Wrapper({ children }: WrapperProps) {
           </button>
         </nav>
       </header>
-      <div class={`fixed top-12 md:right-[62%] bottom-0 left-0 pt-12 bg-white ${open ? 'w-0' : ''}`}>
-        <div class="w-full h-full overflow-y-auto">
+      <div class={`fixed top-0 md:right-[62%] bottom-0 left-0 pt-12 bg-white ${open ? 'w-0' : ''}`}>
+        <div class="w-full h-full">
           <div class="flex flex-col items-end justify-end w-full h-full p-6">
             {children}
           </div>
