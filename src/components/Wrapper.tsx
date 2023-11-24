@@ -7,17 +7,12 @@ type WrapperProps = {
 
 function Wrapper({ children }: WrapperProps) {
   const [open, setOpen] = useState<boolean>(false);
-  const didMount = useRef<boolean>(false);
 
   useEffect(() => {
-    if (didMount.current) {
-      if (open) {
-        document.getElementById('container')?.classList.remove('hidden');
-      } else {
-        document.getElementById('container')?.classList.add('hidden');
-      }
+    if (open) {
+      document.getElementById('container')?.classList.remove('hidden');
     } else {
-      didMount.current = true;
+      document.getElementById('container')?.classList.add('hidden');
     }
   }, [open]);
 
@@ -26,6 +21,7 @@ function Wrapper({ children }: WrapperProps) {
       <button
         class={`fixed top-3 z-50 ${open ? 'left-3' : 'right-3'} flex items-center justify-center w-10 h-10 md:hidden bg-white`}
         type="button"
+        aria-label="Aide"
         onClick={() => setOpen(!open)}>
         {open ? (
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
