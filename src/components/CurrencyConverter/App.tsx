@@ -26,7 +26,7 @@ const App = () => {
     async function getData() {
       const response = await fetch('/api/currencies', {
         method: 'POST',
-        signal: controller.signal 
+        signal: controller.signal
       });
       const data = await response.json();
       setCurrencies(data);
@@ -50,7 +50,7 @@ const App = () => {
   }, [code, currencies]);
 
   const getAmount = (value: number) => {
-    return (value * amount).toLocaleString('fr-CA', { 
+    return (value * amount).toLocaleString('fr-CA', {
       style: 'currency',
       currency: code,
       minimumSignificantDigits: 10
@@ -59,7 +59,7 @@ const App = () => {
 
   return (
     <Wrapper>
-      <div class="w-full">
+      <div class="w-full lg:max-w-[488px]">
         <div class="grid grid-cols-1 gap-6">
           <table class="table-auto w-full min-h-[451px] bg-white">
             <thead>
@@ -71,7 +71,7 @@ const App = () => {
             </thead>
             <tbody>
             {getCurrencies.map((item, i) => (
-              <tr 
+              <tr
                 role="button"
                 tabIndex={0}
                 key={i}

@@ -19,6 +19,7 @@ Ce composant permet de convertir des devises.
   </footer>
 </section>
 ```
+[Accueil](/)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pellentesque, mauris nec vulputate placerat, ex justo faucibus sapien, pharetra egestas purus libero molestie nisi. Quisque eu vehicula erat, at dignissim erat. Proin ultrices sapien quis iaculis volutpat. Mauris laoreet massa ac massa interdum porttitor. Pellentesque tincidunt orci sem, eu sodales nisi aliquet vitae. Proin non auctor nibh, nec commodo odio. Mauris tristique fringilla sollicitudin. Ut molestie elementum sem nec rhoncus. Suspendisse in porta risus. Nam porta mi lobortis erat eleifend, et bibendum erat sagittis. Maecenas vestibulum, velit a feugiat congue, sapien quam pellentesque nisi, et rutrum sem nibh ac libero. Donec semper erat ex, a suscipit est dictum et.
 
