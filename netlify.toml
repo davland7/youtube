@@ -1,0 +1,10 @@
+[build]
+  command = "pnpm run build"
+  publish = "dist"
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+  force = true
+[context.staging.environment]
+  LANG = "fr"

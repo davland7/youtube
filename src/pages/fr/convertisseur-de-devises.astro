@@ -1,0 +1,13 @@
+---
+import Layout from '@layouts/Layout.astro';
+import App from '@components/CurrencyConverter/App.tsx';
+import { Content } from '@components/CurrencyConverter/README.md';
+---
+
+<Layout 
+	title="Convertiseur de devises"
+	description="Convertiseur de devises"
+>
+	<Content />
+	<App slot="app" client:load />
+</Layout>

@@ -1,5 +1,6 @@
 {
   "name": "@davland7/youtube",
+  "homepage": "https://davland7.netlify.app",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -14,9 +15,17 @@
     "@astrojs/netlify": "^3.0.4",
     "@astrojs/preact": "^3.0.1",
     "@astrojs/tailwind": "^5.0.2",
+    "@netlify/functions": "^2.4.0",
     "astro": "^3.5.3",
     "preact": "^10.19.1",
     "tailwindcss": "^3.0.24",
     "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.10",
+    "@testing-library/preact": "^3.2.3",
+    "@types/node": "^20.9.4",
+    "@vitejs/plugin-basic-ssl": "^1.0.1"
   }
 }
