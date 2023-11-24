@@ -59,7 +59,7 @@ const App = () => {
 
   return (
     <Wrapper>
-      <div class="w-full lg:max-w-[488px]">
+      <div class="w-full md:max-w-[488px]">
         <div class="grid grid-cols-1 gap-6">
           <table class="table-auto w-full min-h-[451px] bg-white">
             <thead>
