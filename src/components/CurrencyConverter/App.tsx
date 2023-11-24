@@ -75,7 +75,7 @@ const App = () => {
                 role="button"
                 tabIndex={0}
                 key={i}
-                class={`cursor-pointer ${item.code === code && 'bg-yellow-500'}`}
+                class={`cursor-pointer ${item.code === code && 'bg-blue-300'}`}
                 onClick={() => setCode(item.code)}
                 onKeyDown={(e) => e.key === 'Enter' && setCode(item.code)}
               >
