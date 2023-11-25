@@ -15,6 +15,9 @@ function ToggleMenu() {
       app?.classList.remove('hidden');
       container?.classList.add('hidden');
     }
+
+    app.scrollTop = 1;
+    container.scrollTop = 1;
   }, [open]);
 
   return (
