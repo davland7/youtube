@@ -11,13 +11,10 @@ import Layout from '@layouts/Layout.astro';
       <p>Restez informé de nos dernières actualités et annonces en vous abonnant à notre newsletter.</p>
     </div>
     <form
-      action="/success"
       class="bg-white shadow-lg rounded-md p-5 md:p-10 flex flex-col w-11/12 max-w-lg group"
       name="newsletter"
       method="POST"
       data-netlify="true"
-      data-netlify-honeypot="bot-field"
-      novalidate
     >
       <label for="email" class="mb-5">
         <span>Adresse e-mail</span>
@@ -34,11 +31,6 @@ import Layout from '@layouts/Layout.astro';
           Please enter a valid email address
         </span>
       </label>
-      <p class="hidden">
-        <label>
-          Don’t fill this out if you’re human: <input name="bot-field" />
-        </label>
-      </p>
       <button type="submit" class="mt-5 bg-blue-500 py-3 rounded-md text-white group-invalid:pointer-events-none group-invalid:opacity-50">
         Subscribe
       </button>
