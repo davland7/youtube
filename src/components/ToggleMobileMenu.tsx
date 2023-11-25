@@ -16,11 +16,11 @@ function ToggleMenu() {
       container?.classList.add('hidden');
     }
 
-    app.addEventListener('touchstart', () => {
-      alert('touchstart APP');
+    app.addEventListener('touchmove', (e) => {
+      e.target.focus();
     });
-    container.addEventListener('touchstart', () => {
-      alert('touchstart CONTAINER');
+    container.addEventListener('touchmove', (e) => {
+      e.target.focus();
     });
   }, [open]);
 
