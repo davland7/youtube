@@ -1,39 +1,12 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import NewsLetter from '@components/Newsletter.astro';
 ---
 
 <Layout
   title="Welcome to Astro."
   description="Home">
 	<main class="fixed top-0 right-0 bottom-0 left-0 flex flex-col items-center justify-center">
-    <div class="text-center mb-8">
-      <h1 class="text-2xl font-bold mb-2">Abonnez-vous à notre newsletter</h1>
-      <p>Restez informé de nos dernières actualités et annonces en vous abonnant à notre newsletter.</p>
-    </div>
-    <form
-      class="bg-white shadow-lg rounded-md p-5 md:p-10 flex flex-col w-11/12 max-w-lg group"
-      name="newsletter"
-      method="POST"
-      data-netlify="true"
-    >
-      <label for="email" class="mb-5">
-        <span>Adresse e-mail</span>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          class="w-full rounded border border-gray-300 bg-inherit p-3 shadow shadow-gray-100 mt-2 appearance-none outline-none text-neutral-800 invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500 peer"
-          placeholder=" "
-          required
-          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-        />
-        <span class="mt-2 hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">
-          Please enter a valid email address
-        </span>
-      </label>
-      <button type="submit" class="mt-5 bg-blue-500 py-3 rounded-md text-white group-invalid:pointer-events-none group-invalid:opacity-50">
-        Subscribe
-      </button>
-    </form>
+    <NewsLetter />
 	</main>
 </Layout>
