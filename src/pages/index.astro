@@ -7,18 +7,20 @@ import Layout from '@layouts/Layout.astro';
   description="Home">
 	<main class="fixed top-0 right-0 bottom-0 left-0 flex flex-col items-center justify-center">
     <div class="text-center mb-8">
-      <h1 class="text-2xl font-bold mb-2">Subscribe to Our Newsletter</h1>
-      <p>Stay updated with our latest news and announcements by subscribing to our newsletter.</p>
+      <h1 class="text-2xl font-bold mb-2">Abonnez-vous à notre newsletter</h1>
+      <p>Restez informé de nos dernières actualités et annonces en vous abonnant à notre newsletter.</p>
     </div>
     <form
       class="bg-white shadow-lg rounded-md p-5 md:p-10 flex flex-col w-11/12 max-w-lg group"
-      novalidate
-      name="newsletter"
       data-netlify="true"
+      method="post"
+      name="newsletter"
+      netlify-honeypot="hpfield"
+      novalidate
     >
-      <input type="hidden" name="form-name" value="newsletter" />
+      <input class="hidden" name="hpfield" />
       <label for="email" class="mb-5">
-        <span>Email</span>
+        <span>Adresse e-mail</span>
         <input
           type="email"
           name="email"
