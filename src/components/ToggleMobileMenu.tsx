@@ -16,12 +16,20 @@ function ToggleMenu() {
       container?.classList.add('hidden');
     }
 
-    app.scrollTop = 1;
-    container.scrollTop = 1;
+    app.addEventListener('touchstart', () => {
+      alert('touchstart APP');
+    });
+    container.addEventListener('touchstart', () => {
+      alert('touchstart CONTAINER');
+    });
   }, [open]);
 
   return (
-    <button aria-label={open ? 'Return' : 'Read Manual'} class={`fixed top-0 ${open ? 'left-0' : 'right-0'} flex md:hidden items-center justify-center w-10 h-10 m-1 bg-white`} type="button" onClick={() => setOpen(!open)}>
+    <button
+      aria-label={open ? 'Return' : 'Read Manual'}
+      class={`fixed top-0 ${open ? 'left-0' : 'right-0'} flex lg:hidden items-center justify-center w-10 h-10 m-1 bg-white`}
+      type="button"
+      onClick={() => setOpen(!open)}>
       {open ? <ArrowLeft /> : <BookOpenCircle />}
     </button>
   );
