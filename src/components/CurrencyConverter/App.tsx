@@ -57,7 +57,7 @@ const App = () => {
   };
 
   return (
-    <div class="grid grid-cols-1 gap-6">
+    <div class="p-6">
       <table class="table-auto w-full min-h-[451px] bg-white">
         <thead>
           <tr>

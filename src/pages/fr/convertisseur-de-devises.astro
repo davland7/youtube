@@ -1,6 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import ToggleMenu from '@components/ToggleMenu';
+import ToggleMobileMenu from '@components/ToggleMobileMenu';
 import App from '@components/CurrencyConverter/App.tsx';
 import { Content } from '@components/CurrencyConverter/README.md';
 ---
@@ -9,22 +9,19 @@ import { Content } from '@components/CurrencyConverter/README.md';
 	title="Convertiseur de devises"
 	description="Convertiseur de devises"
 >
-  <nav class="fixed top-0 right-0 left-0 z-20 flex justify-end md:hidden h-12 p-2 pb-0">
-    <ToggleMenu client:visible />
-  </nav>
-  <main>
-    <section id="container" class="md:ml-[38%] mt-12 md:mt-0 hidden md:block">
-      <article class="w-full max-w-[792px] p-6 prose-base prose-h1:mt-3 prose-a:text-blue-600">
+  <ToggleMobileMenu client:visible />
+  <main class="flex w-full h-full">
+    <aside class="flex flex-[1_1_38%] justify-end md:w-[38%] overflow-y-auto">
+      <div class="flex flex-col w-full md:max-w-[488px]">
+        <div class="flex-auto"></div>
+        <App client:load />
+      </div>
+    </aside>
+    <section class="md:w-[62%] t-0 hidden md:flex md:flex-[1_1_62%] overflow-y-auto">
+      <article class="w-full max-w-[792px] p-6 mt-12 prose-base prose-h1:mt-3 prose-a:text-blue-600">
         <a href="/">Accueil</a> / <a href="/currency-converter">Convertiseur de devises</a>
         <Content />
       </article>
     </section>
   </main>
-  <aside class="fixed top-0 right-0 md:right-[62%] bottom-0 left-0 pt-12 md:block bg-white">
-    <div class="flex flex-col items-end justify-end w-full h-full p-6">
-      <div class="w-full md:max-w-[488px]">
-        <App client:load />
-      </div>
-    </div>
-  </aside>
 </Layout>
