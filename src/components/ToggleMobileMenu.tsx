@@ -15,13 +15,6 @@ function ToggleMenu() {
       app?.classList.remove('hidden');
       container?.classList.add('hidden');
     }
-
-    app.addEventListener('touchmove', (e) => {
-      e.target.focus();
-    });
-    container.addEventListener('touchmove', (e) => {
-      e.target.focus();
-    });
   }, [open]);
 
   return (
