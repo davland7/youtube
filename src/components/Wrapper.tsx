@@ -13,7 +13,7 @@ function Wrapper({ children }: WrapperProps) {
 
   return (
     <>
-      <nav class={`md:hidden bg-green-200 sticky top-0 left-0 right-0 flex items-center ${open ? '' : 'justify-end'} w-full h-12 z-30`}>
+      <nav class={`md:hidden bg-green-200 fixed top-0 left-0 right-0 flex items-center ${open ? '' : 'justify-end'} w-full h-12 z-30`}>
         <button type="button" class="flex items-center justify-center w-12 h-12" onClick={() => setOpen(!open)}>
           {open ? (
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
