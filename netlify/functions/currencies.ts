@@ -14,7 +14,7 @@ const handler: Handler = async (event: HandlerEvent, context: HandlerContext) =>
         headers: CORS_HEADERS,
       }
     }
-    
+
     const response = await fetch(process.env.GOOGLE_SHEETS_URL as string);
 
     const csvData = await response.text();

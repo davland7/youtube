@@ -1,17 +1,10 @@
 # My YouTube channel
 
 ```bash
+pnpm create astro@latest
 pnpm add @netlify/functions
 pnpm add -D @types/node
-pnpm create astro@latest
-```
-
-Add port to `astro.config.mjs`:
-
-```bash
-export default defineConfig({
-  server: { port: 3333 }
-});
+pnpm add -D @tailwindcss/forms @tailwindcss/typography
 ```
 
 Add `netlify.toml`:
@@ -20,17 +13,19 @@ Add `netlify.toml`:
 [build]
   command = "pnpm run build"
   publish = "dist"
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+  force = true
 ```
 
 Change `package.json`:
 
 ```bash
 scripts": {
-  "api": "netlify functions:serve -p 4444",
-  "dev": "PUBLIC_API_URL=http://localhost:4444 astro dev"
+  "start": "netlify dev",
 }
 ```
 
-```bash	
-`${PUBLIC_API_URL ?? ''}/.netlify/functions/currencies`
-```
+[![Netlify Status](https://api.netlify.com/api/v1/badges/254ab723-ddc0-44f1-a1a9-592606b2c308/deploy-status)](https://app.netlify.com/sites/davland7/deploys)

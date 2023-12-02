@@ -1,11 +1,23 @@
 # Get all currencies
 
-GET http://localhost:4444/.netlify/functions/currencies
+GET http://localhost:8888/api/currencies
 
 ###
 
-POST http://localhost:4444/.netlify/functions/currencies
+POST http://localhost:8888/api/currencies
 
 ###
 
-POST https://superb-sorbet-ca09c6.netlify.app/.netlify/functions/currencies
+OPTIONS http://localhost:8888/api/currencies
+
+###
+
+GET https://davland7.netlify.app/.netlify/functions/currencies
+
+###
+
+POST https://davland7.netlify.app/.netlify/functions/currencies
+
+###
+
+OPTIONS https://davland7.netlify.app/.netlify/functions/currencies
