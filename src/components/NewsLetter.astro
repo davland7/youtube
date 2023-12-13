@@ -8,6 +8,7 @@
 </div>
 <form
   class="bg-white shadow-lg rounded-md p-5 md:p-10 flex flex-col w-11/12 max-w-lg group"
+  id="newsletter"
   name="newsletter"
   method="POST"
   data-netlify="true"
@@ -19,8 +20,9 @@
     <input
       type="email"
       name="email"
-      id="email"
       class="w-full rounded border border-gray-300 bg-inherit p-3 shadow shadow-gray-100 mt-2 appearance-none outline-none text-neutral-800 invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500 peer"
+      id="email"
+      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
       placeholder=""
       required
     />
