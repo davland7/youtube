@@ -72,7 +72,7 @@ const App = () => {
             role="button"
             tabIndex={0}
             key={i}
-            class={`cursor-pointer ${item.code === code && 'bg-blue-300'}`}
+            class={`cursor-pointer ${item.code === code && 'bg-orange-500 text-white'}`}
             onClick={() => setCode(item.code)}
             onKeyDown={(e) => e.key === 'Enter' && setCode(item.code)}
           >
@@ -90,7 +90,7 @@ const App = () => {
           name="amount"
           type="number"
           value={amount}
-          onChange={(e) => setAmount(parseFloat((e.target as HTMLTextAreaElement).value))}
+          onChange={(e) => setAmount(parseFloat((e.target as HTMLInputElement).value))}
         />
       </label>
     </div>

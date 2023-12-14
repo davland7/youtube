@@ -6,7 +6,8 @@
     "baseUrl": "src",
     "paths": {
       "@components/*": ["./components/*"],
-      "@layouts/*": ["./layouts/*"]
+      "@layouts/*": ["./layouts/*"],
+      "@preact/*": ["./components/preact/*"],
     }
   }
 }

@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'preact/hooks';
-import { ArrowLeft, Calculator, CodeBracketSquare, Home } from '@components/Icons';
+import { ArrowLeft, Calculator, CodeBracketSquare, Home } from '@components/preact/Icons';
 
 function NavBar() {
   const [open, setOpen] = useState<boolean>(false);
 
   useEffect(() => {
-    const app = document.getElementsByTagName('aside')[0] as HTMLInputElement | null;
-    const container = document.getElementsByTagName('section')[0] as HTMLInputElement | null;
+    const app: HTMLElement = document.getElementsByTagName('aside')[0];
+    const container: HTMLElement = document.getElementsByTagName('section')[0];
 
     if (open) {
       app?.classList.remove('hidden');
@@ -18,7 +18,7 @@ function NavBar() {
   }, [open]);
 
   return (
-    <nav role="navigation" class="m-auto w-full max-w-screen-2xl flex justify-between">
+    <nav role="navigation" class="m-auto w-full flex justify-between">
       <a aria-label="Accueil" role="link" href="/" class={`${open ? 'hidden' : 'flex'} lg:flex items-center justify-center w-10 h-10 m-1`}>
         <Home />
       </a>
