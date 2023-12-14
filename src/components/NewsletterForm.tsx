@@ -37,6 +37,7 @@ function NewsletterForm() {
         type="hidden"
         name="form-name"
         value="newsletter"
+        required
       />
       <p
         role="alert"
