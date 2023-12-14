@@ -42,7 +42,7 @@ function NewsletterForm() {
       <p
         role="alert"
         aria-live="assertive"
-        class="text-red-500 h-12"
+        class="text-red-500 h-8"
       >
         {error && 'Veuillez saisir une adresse e-mail valide.'}
       </p>

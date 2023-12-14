@@ -7,15 +7,23 @@ import NewsletterForm from '@components/NewsletterForm';
   title="Welcome to Astro."
   description="Home">
 	<main class="fixed top-0 right-0 bottom-0 left-0 flex flex-col items-center justify-center p-8">
-    <ul class="flex flex-col items-center justify-center space-y-4 mb-6">
-      <li>
-        <a href="/fr/convertisseur-de-devises" class="my-2 text-orange-500 underline hover:no-underline">Convertisseur de devises</a>
-      </li>
-    </ul>
     <div class="text-center mb-6">
-      <h1 class="text-2xl font-bold mb-2">Abonnez-vous à notre newsletter</h1>
+      <h2 class="text-2xl font-bold mb-2">Pages</h2>
+      <ul class="flex flex-col items-center justify-center space-y-4">
+        <li>
+          <a href="/fr/convertisseur-de-devises" class="my-2 text-orange-500 underline hover:no-underline">Convertisseur de devises</a>
+        </li>
+      </ul>
+    </div>
+    <div class="text-center mb-4">
+      <h2 class="text-2xl font-bold mb-2">Abonnez-vous à ma newsletter</h2>
       <p>Restez informé de nos dernières actualités et annonces en vous abonnant à notre newsletter.</p>
     </div>
     <NewsletterForm client:load />
+    <div class="m-12">
+      <a href="https://www.youtube.com/@davland7" target="_blank">
+        <img src="/images/yt_logo_rgb_light.png" alt="YouTube Logo" class="w-[196px]" />
+      </a>
+    </div>
 	</main>
 </Layout>
