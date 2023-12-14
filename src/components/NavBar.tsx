@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'preact/hooks';
-import { ArrowLeft, Calculator, CodeBracketSquare, Home } from '@components/preact/Icons';
+import { ArrowLeft, Calculator, CodeBracketSquare, Home } from '@components/Icons';
 
 function NavBar({
   codeUrl
@@ -29,7 +29,7 @@ function NavBar({
       <button
         role="button"
         aria-label={open ? 'Retour' : 'Application'}
-        class="flex xl:hidden items-center justify-center w-10 h-10 m-1"
+        class="flex md:hidden items-center justify-center w-10 h-10 m-1"
         type="button"
         onClick={() => setOpen(!open)}>
         {open ? <ArrowLeft /> : <Calculator />}
@@ -39,7 +39,7 @@ function NavBar({
         target="_blank"
         role="link"
         href={codeUrl}
-        class={`${open ? 'flex' : 'hidden'} xl:flex items-center justify-center w-10 h-10 m-1`}>
+        class={`${open ? 'flex' : 'hidden'} md:flex items-center justify-center w-10 h-10 m-1`}>
         <CodeBracketSquare />
       </a>
     </nav>

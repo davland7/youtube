@@ -7,7 +7,6 @@
     "paths": {
       "@components/*": ["./components/*"],
       "@layouts/*": ["./layouts/*"],
-      "@preact/*": ["./components/preact/*"],
     }
   }
 }

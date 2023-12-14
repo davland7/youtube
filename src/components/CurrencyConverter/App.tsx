@@ -58,12 +58,12 @@ const App = () => {
 
   return (
     <div class="p-6 max-w-xl m-auto xl:m-0">
-      <table class="table-auto w-full min-h-[451px] bg-white">
+      <table class="table-auto w-full min-h-[451px]">
         <thead>
           <tr>
-            <th id="name" class="px-4 py-2 bg-gray-200">Nom</th>
-            <th id="code" class="px-4 py-2 bg-gray-200">Code</th>
-            <th id="value" class="px-4 py-2 bg-gray-200">Valeur</th>
+            <th id="name" class="px-4 py-2 bg-gray-200 dark:text-black">Nom</th>
+            <th id="code" class="px-4 py-2 bg-gray-200 dark:text-black">Code</th>
+            <th id="value" class="px-4 py-2 bg-gray-200 dark:text-black">Valeur</th>
           </tr>
         </thead>
         <tbody>
