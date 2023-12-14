@@ -34,7 +34,7 @@ function NavBar() {
         aria-label="Code source"
         target="_blank"
         role="link"
-        href="https://github.com/davland7/youtube/tree/66184a9c7fe5ade8b0ff0b71119ca06cb238b4ba/src/components/CurrencyConverter"
+        href="https://github.com/davland7/youtube/tree/main/src/components/CurrencyConverter"
         class={`${open ? 'flex' : 'hidden'} lg:flex items-center justify-center w-10 h-10 m-1`}>
         <CodeBracketSquare />
       </a>
