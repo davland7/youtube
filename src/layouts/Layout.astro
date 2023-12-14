@@ -5,12 +5,10 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
-
-// lg:ml-[38%]
 ---
 
 <!doctype html>
-<html lang="fr" class="m-0 p-0 h-full">
+<html lang="fr">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
@@ -19,7 +17,7 @@ const { title, description } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="m-0 p-0 h-full">
+	<body>
     <slot />
 	</body>
 </html>
