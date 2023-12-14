@@ -10,12 +10,12 @@ import { Content as README } from '@preact/CurrencyConverter/README.md';
 	description="Convertiseur de devises"
 >
   <NavBar client:load />
-  <main class="flex w-full">
-    <aside class="hidden lg:fixed lg:bottom-0 lg:right-[62%] lg:flex lg:justify-end w-full lg:w-[38%]">
+  <main class="flex w-full desktop:bg-slate-400">
+    <aside class="hidden desktop:fixed desktop:bottom-0 desktop:right-[62%] desktop:flex desktop:justify-end w-full desktop:w-[38%]">
       <App client:load />
     </aside>
-    <section class="flex w-full lg:w-[62%] lg:ml-[38%]">
-      <article class="w-full lg:max-w-screen-md p-6 prose-base prose-h1:mt-3 prose-a:text-blue-600">
+    <section class="flex w-full desktop:w-[62%] desktop:ml-[38%]">
+      <article class="w-full desktop:max-w-screen-md p-6 prose-base prose-h1:mt-3 prose-a:text-blue-600">
         <README />
       </article>
     </section>

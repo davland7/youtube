@@ -19,13 +19,13 @@ function NavBar() {
 
   return (
     <nav role="navigation" class="m-auto w-full flex justify-between">
-      <a aria-label="Accueil" role="link" href="/" class={`${open ? 'hidden' : 'flex'} lg:flex items-center justify-center w-10 h-10 m-1`}>
+      <a aria-label="Accueil" role="link" href="/" class={`${open ? 'hidden' : 'flex'} desktop:flex items-center justify-center w-10 h-10 m-1`}>
         <Home />
       </a>
       <button
         role="button"
         aria-label={open ? 'Retour' : 'Application'}
-        class="flex lg:hidden items-center justify-center w-10 h-10 m-1"
+        class="flex desktop:hidden items-center justify-center w-10 h-10 m-1"
         type="button"
         onClick={() => setOpen(!open)}>
         {open ? <ArrowLeft /> : <Calculator />}
@@ -35,7 +35,7 @@ function NavBar() {
         target="_blank"
         role="link"
         href="https://github.com/davland7/youtube/tree/main/src/components/CurrencyConverter"
-        class={`${open ? 'flex' : 'hidden'} lg:flex items-center justify-center w-10 h-10 m-1`}>
+        class={`${open ? 'flex' : 'hidden'} desktop:flex items-center justify-center w-10 h-10 m-1`}>
         <CodeBracketSquare />
       </a>
     </nav>
