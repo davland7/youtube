@@ -1,0 +1,23 @@
+---
+import Layout from '@layouts/Layout.astro';
+import App from '@preact/CurrencyConverter/App';
+import NavBar from '@preact/NavBar';
+import { Content as README } from '@preact/CurrencyConverter/README.md';
+---
+
+<Layout
+	title="Convertiseur de devises"
+	description="Convertiseur de devises"
+>
+  <NavBar codeUrl="https://github.com/davland7/youtube/tree/main/src/components/preact/CurrencyConverter" client:load />
+  <main class="flex w-full">
+    <aside class="hidden split-screen:fixed split-screen:bottom-0 split-screen:right-[62%] split-screen:flex split-screen:justify-end w-full split-screen:w-[38%]">
+      <App client:load />
+    </aside>
+    <section class="flex w-full split-screen:w-[62%] split-screen:ml-[38%]">
+      <article class="w-full split-screen:max-w-screen-md p-6 prose-base prose-h1:mt-3 prose-a:text-blue-600">
+        <README />
+      </article>
+    </section>
+  </main>
+</Layout>

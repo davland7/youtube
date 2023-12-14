@@ -57,7 +57,7 @@ const App = () => {
   };
 
   return (
-    <div class="p-6 max-w-xl m-auto">
+    <div class="p-6 max-w-xl m-auto split-screen:m-0">
       <table class="table-auto w-full min-h-[451px] bg-white">
         <thead>
           <tr>

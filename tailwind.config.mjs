@@ -4,7 +4,7 @@ export default {
 	theme: {
 		extend: {
       screens: {
-        'desktop': '1025px',
+        'split-screen': '1025px',
       }
     },
 	},

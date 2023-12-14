@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'preact/hooks';
 import { ArrowLeft, Calculator, CodeBracketSquare, Home } from '@components/preact/Icons';
 
-function NavBar() {
+function NavBar({
+  codeUrl
+}: {
+  codeUrl: string;
+}) {
   const [open, setOpen] = useState<boolean>(false);
 
   useEffect(() => {
@@ -19,13 +23,13 @@ function NavBar() {
 
   return (
     <nav role="navigation" class="m-auto w-full flex justify-between">
-      <a aria-label="Accueil" role="link" href="/" class={`${open ? 'hidden' : 'flex'} desktop:flex items-center justify-center w-10 h-10 m-1`}>
+      <a aria-label="Accueil" role="link" href="/" class={`${open ? 'hidden' : 'flex'} split-screen:flex items-center justify-center w-10 h-10 m-1`}>
         <Home />
       </a>
       <button
         role="button"
         aria-label={open ? 'Retour' : 'Application'}
-        class="flex desktop:hidden items-center justify-center w-10 h-10 m-1"
+        class="flex split-screen:hidden items-center justify-center w-10 h-10 m-1"
         type="button"
         onClick={() => setOpen(!open)}>
         {open ? <ArrowLeft /> : <Calculator />}
@@ -34,8 +38,8 @@ function NavBar() {
         aria-label="Code source"
         target="_blank"
         role="link"
-        href="https://github.com/davland7/youtube/tree/main/src/components/CurrencyConverter"
-        class={`${open ? 'flex' : 'hidden'} desktop:flex items-center justify-center w-10 h-10 m-1`}>
+        href={codeUrl}
+        class={`${open ? 'flex' : 'hidden'} split-screen:flex items-center justify-center w-10 h-10 m-1`}>
         <CodeBracketSquare />
       </a>
     </nav>
