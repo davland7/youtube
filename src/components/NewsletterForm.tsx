@@ -26,7 +26,7 @@ function NewsletterForm() {
 
   return (
     <form
-      class="flex flex-col items-center w-11/12 max-w-lg"
+      class="flex flex-col items-center"
       data-netlify="true"
       name="newsletter"
       method="POST"
