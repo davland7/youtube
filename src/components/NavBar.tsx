@@ -22,14 +22,14 @@ function NavBar({
   }, [open]);
 
   return (
-    <nav role="navigation" class="m-auto w-full flex justify-between">
-      <a aria-label="Accueil" role="link" href="/" class={`${open ? 'hidden' : 'flex'} xl:flex items-center justify-center w-10 h-10 m-1`}>
+    <nav role="navigation" class="fixed top-0 right-0 left-0 m-auto w-full flex justify-between">
+      <a aria-label="Accueil" role="link" href="/" class={`${open ? 'hidden' : 'flex'} xl:flex items-center justify-center w-10 h-10 m-1 bg-white dark:bg-black rounded-full shadow shadow-gray-100 appearance-none outline-none border border-gray-200 dark:border-gray-800`}>
         <Home />
       </a>
       <button
         role="button"
         aria-label={open ? 'Retour' : 'Application'}
-        class="flex md:hidden items-center justify-center w-10 h-10 m-1"
+        class="flex md:hidden items-center justify-center w-10 h-10 m-1 bg-white dark:bg-black rounded-full shadow shadow-gray-100 appearance-none outline-none border border-gray-200 dark:border-gray-800"
         type="button"
         onClick={() => setOpen(!open)}>
         {open ? <ArrowLeft /> : <Calculator />}
@@ -39,7 +39,7 @@ function NavBar({
         target="_blank"
         role="link"
         href={codeUrl}
-        class={`${open ? 'flex' : 'hidden'} md:flex items-center justify-center w-10 h-10 m-1`}>
+        class={`${open ? 'flex' : 'hidden'} md:flex items-center justify-center w-10 h-10 m-1 bg-white dark:bg-black rounded-full shadow shadow-gray-100 appearance-none outline-none border border-gray-200 dark:border-gray-800`}>
         <CodeBracketSquare />
       </a>
     </nav>
