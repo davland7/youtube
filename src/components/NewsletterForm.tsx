@@ -49,6 +49,7 @@ function NewsletterForm() {
       data-netlify-honeypot="bot-field"
       novalidate
      >
+      <input type="hidden" name="subject" value="New lead from %{formName} (%{submissionId})" />
       <input
         type="hidden"
         name="form-name"
@@ -61,7 +62,7 @@ function NewsletterForm() {
       >
         {error && 'Veuillez saisir une adresse e-mail valide.'}
       </p>
-      <p>
+      <p class="w-full">
         <label
           class="w-full">
           <span class="sr-only">Adresse e-mail</span>
