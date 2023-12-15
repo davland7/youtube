@@ -27,7 +27,7 @@ function NewsletterForm() {
       fetch("/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "newsletter", "email": email })
+        body: new URLSearchParams(formData).toString()
       })
         .then((response) => {
           console.log(response);
