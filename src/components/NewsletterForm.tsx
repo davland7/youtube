@@ -14,13 +14,14 @@ function NewsletterForm() {
 
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
-    const emailIsValid = validateEmail(formData.get('email') as string);
+    const email = formData.get('email') as string;
+    const emailIsValid = validateEmail(email);
 
     if (emailIsValid) {
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString(),
+        body: encode({ "form-name": "newsletter", email })
       })
         .then((response) => {
           console.log(response);
