@@ -16,7 +16,7 @@ function NewsletterForm() {
     const emailIsValid = validateEmail(email);
 
     if (emailIsValid) {
-      fetch("/newsletter", {
+      fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData).toString()
@@ -63,7 +63,7 @@ function NewsletterForm() {
         for="email"
         class="sr-only"
       >
-        Adresse e-mail :
+        Adresse e-mail
       </label>
       <input
         type="email"
