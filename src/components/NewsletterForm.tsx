@@ -2,6 +2,11 @@ import type { JSX } from 'preact';
 import { useState } from 'preact/hooks';
 
 const FORM_NAME = 'newsletter';
+const MESSAGES = {
+  success: 'Merci pour votre inscription !',
+  error: 'Une erreur est survenue, veuillez réessayer.',
+  invalid: 'Veuillez saisir une adresse e-mail valide.'
+};
 
 function NewsletterForm() {
   const [error, setError] = useState(false);
@@ -29,21 +34,21 @@ function NewsletterForm() {
 
           if (response.ok) {
             form.reset();
-            setStatusMessage('Merci pour votre inscription !');
+            setStatusMessage(MESSAGES.success);
             setError(false);
           } else {
-            setStatusMessage('Une erreur est survenue, veuillez réessayer.');
+            setStatusMessage(MESSAGES.error);
             setError(true);
           }
         })
         .catch((error) => {
-          setStatusMessage('Une erreur est survenue, veuillez réessayer.');
+          setStatusMessage(MESSAGES.error);
           setError(true);
           console.error(error);
         });
     } else {
       setError(true);
-      setStatusMessage('Veuillez saisir une adresse e-mail valide.');
+      setStatusMessage(MESSAGES.invalid);
     }
 
     event.preventDefault();
