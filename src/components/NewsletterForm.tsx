@@ -11,18 +11,19 @@ function NewsletterForm() {
 
   const handleSubmit = (event: JSX.TargetedEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const formData = new FormData(event.target);
+
+    const myForm = event.target;
+    const formData = new FormData(myForm);
     const emailIsValid = validateEmail(formData.get('email') as string);
 
     if (emailIsValid) {
-      fetch('/', {
+      fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString()
-      }).then(() => {
-        setError(false);
-      }).catch((error) =>
-        alert(error));
+        body: new URLSearchParams(formData).toString(),
+      })
+        .then(() => setError(false))
+        .catch((error) => alert(error));
     } else {
       setError(true);
     }
@@ -32,6 +33,7 @@ function NewsletterForm() {
     <form
       class="flex flex-col items-center"
       data-netlify="true"
+      method="POST"
       name="newsletter"
       id="newsletter"
       onSubmit={handleSubmit}
