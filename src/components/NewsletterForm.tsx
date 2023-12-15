@@ -41,7 +41,7 @@ function NewsletterForm() {
     const emailIsValid = validateEmail(email);
 
     if (emailIsValid) {
-      fetch(FORM_NAME, {
+      fetch('/', {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData as any).toString()
@@ -69,6 +69,7 @@ function NewsletterForm() {
 
   return (
     <form
+      class="w-full"
       name={FORM_NAME}
       method="POST"
       onSubmit={handleSubmit}
@@ -88,7 +89,7 @@ function NewsletterForm() {
       <p
         role="alert"
         aria-live="assertive"
-        class={`h-12 pt-3 ${error ? 'text-red-500' : 'text-green-500'}`}
+        class={`text-center h-12 pt-3 ${error ? 'text-red-500' : 'text-green-500'}`}
       >
         {statusMessage}
       </p>
