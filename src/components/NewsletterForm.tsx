@@ -49,7 +49,6 @@ function NewsletterForm() {
       data-netlify-honeypot="bot-field"
       novalidate
      >
-      <input type="hidden" name="subject" value="New lead from %{formName} (%{submissionId})" />
       <input
         type="hidden"
         name="form-name"
