@@ -61,8 +61,9 @@ function NewsletterForm() {
       >
         {error && 'Veuillez saisir une adresse e-mail valide.'}
       </p>
-      <label>
-        <span class="sr-only">Adresse e-mail : </span>
+      <label
+        class="w-full">
+        <span class="sr-only">Adresse e-mail</span>
         <input
           type="email"
           name="email"
