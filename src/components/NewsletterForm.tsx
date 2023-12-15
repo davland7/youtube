@@ -12,20 +12,20 @@ function NewsletterForm() {
   const handleSubmit = (event: JSX.TargetedEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const newsletterForm = event.target;
-    const XHR = new XMLHttpRequest();
-    const formData = new FormData(newsletterForm);
+    const formData = new FormData(event.target);
     const emailIsValid = validateEmail(formData.get('email') as string);
 
     if (emailIsValid) {
-      XHR.addEventListener('load', function() {
-        setError(false);
+      fetch("/", {
+        body: formData,
+        method: "POST",
       })
-      XHR.addEventListener('error', function() {
-        setError(true);
-      })
-      XHR.open('POST', '#');
-      XHR.send(formData);
+        .then(() => {
+          setError(true);
+        })
+        .catch((error) => {
+          setError(false);
+        });
     } else {
       setError(true);
     }
