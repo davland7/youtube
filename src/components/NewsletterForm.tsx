@@ -18,11 +18,11 @@ function NewsletterForm() {
     if (emailIsValid) {
       fetch("/", {
         body: formData,
-        method: "POST",
+        method: "POST"
       })
-        .then(() => {
+        .then((response) => {
           setError(true);
-          console.log('Form successfully submitted');
+          console.log('Form successfully submitted', response);
         })
         .catch((error) => {
           setError(false);
@@ -35,6 +35,7 @@ function NewsletterForm() {
 
   return (
     <form
+      action="/"
       class="flex flex-col items-center"
       data-netlify="true"
       method="POST"
