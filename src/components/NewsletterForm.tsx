@@ -54,11 +54,6 @@ function NewsletterForm() {
         name="form-name"
         value={FORM_NAME}
       />
-      <input
-        type="hidden"
-        name="subject"
-        value="New lead from %{formName} (%{submissionId})"
-      />
       <p
         role="alert"
         aria-live="assertive"
