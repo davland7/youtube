@@ -9,12 +9,6 @@ function NewsletterForm() {
     return emailRegex.test(email);
   };
 
-  const encode = (data) => {
-    return Object.keys(data)
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-        .join("&");
-  }
-
   const handleSubmit = (event: JSX.TargetedEvent<HTMLFormElement>) => {
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -45,7 +39,7 @@ function NewsletterForm() {
   return (
     <form
       class="flex flex-col items-center"
-      name="Newsletter"
+      name="newsletter"
       method="POST"
       onSubmit={handleSubmit}
       data-netlify="true"
@@ -55,7 +49,7 @@ function NewsletterForm() {
       <input
         type="hidden"
         name="form-name"
-        value="Newsletter"
+        value="newsletter"
       />
       <p
         role="alert"
