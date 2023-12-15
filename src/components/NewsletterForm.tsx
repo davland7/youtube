@@ -49,7 +49,7 @@ function NewsletterForm() {
       <div class="hidden" aria-hidden="true">
         <label>
           Don’t fill this out if you're human:
-          <input name="bot-field">
+          <input name="bot-field" />
         </label>
       </div>
       <input
