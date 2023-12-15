@@ -27,7 +27,7 @@ function NewsletterForm() {
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "newsletter", email })
+        body: encode({ "form-name": "newsletter", "email": email })
       })
         .then((response) => {
           console.log(response);
