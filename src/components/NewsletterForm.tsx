@@ -107,7 +107,7 @@ function NewsletterForm() {
         />
       </p>
       <button
-        class="p-3 rounded-full border bg-yellow-500 disabled:bg-yellow-500 disabled:cursor-not-allowed hover:bg-yellow-600 focus:bg-yellow-600 h-12 w-full mt-5 dark:text-black font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 focus:ring-offset-white focus:ring-opacity-50"
+        class="p-3 mb-2 rounded-full border bg-yellow-500 disabled:bg-yellow-500 disabled:cursor-not-allowed hover:bg-yellow-600 focus:bg-yellow-600 h-12 w-full mt-5 dark:text-black font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 focus:ring-offset-white focus:ring-opacity-50"
         type="submit"
         aria-label="Submit"
         disabled={disable}
