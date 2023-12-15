@@ -23,6 +23,9 @@ import NewsletterForm from '@components/NewsletterForm';
       <h2 class="text-2xl font-bold mb-2">Abonnez-vous à ma newsletter</h2>
       <p>Restez informé de nos dernières actualités et annonces en vous abonnant à notre newsletter.</p>
       <NewsletterForm client:load />
+      <form name="newsletter" data-netlify="true" netlify-honeypot="bot-field" hidden>
+        <input type="email" name="email">
+      </form>
     </div>
     <div class="m-12">
       <a href="https://www.youtube.com/@davland7" target="_blank">

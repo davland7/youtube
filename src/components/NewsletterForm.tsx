@@ -39,24 +39,15 @@ function NewsletterForm() {
   return (
     <form
       class="flex flex-col items-center"
-      id="newsletter"
       name="newsletter"
       method="POST"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      action="/"
+      onSubmit={handleSubmit}
+      novalidate
      >
-      <div class="hidden" aria-hidden="true">
-        <label>
-          Don’t fill this out if you're human:
-          <input name="bot-field" />
-        </label>
-      </div>
       <input
         type="hidden"
         name="form-name"
         value="newsletter"
-        required
       />
       <p
         role="alert"
