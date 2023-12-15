@@ -16,8 +16,6 @@ function NewsletterForm() {
   }
 
   const handleSubmit = (event: JSX.TargetedEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
     const form = event.target as HTMLFormElement;
     const formData = new FormData(form);
     const email = formData.get('email') as string;
@@ -40,6 +38,8 @@ function NewsletterForm() {
     } else {
       setError(true);
     }
+
+    event.preventDefault();
   }
 
   return (
