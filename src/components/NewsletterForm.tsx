@@ -22,11 +22,11 @@ function NewsletterForm() {
         body: new URLSearchParams(formData).toString(),
       })
         .then((response) => {
-          setError(true);
+          setError(false);
           console.log('Form successfully submitted', response);
         })
         .catch((error) => {
-          setError(false);
+          setError(true);
           console.log(error);
         });
     } else {
@@ -36,14 +36,11 @@ function NewsletterForm() {
 
   return (
     <form
-      action="/"
       class="flex flex-col items-center"
       data-netlify="true"
       method="POST"
       name="newsletter"
-      id="newsletter"
       onSubmit={handleSubmit}
-      noValidate
     >
       <input
         type="hidden"
