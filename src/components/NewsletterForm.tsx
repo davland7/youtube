@@ -4,17 +4,34 @@ import { useState } from 'preact/hooks';
 const FORM_NAME = 'newsletter';
 const MESSAGES = {
   success: 'Merci pour votre inscription !',
+  empty: 'Veuillez saisir une adresse e-mail.',
   error: 'Une erreur est survenue, veuillez réessayer.',
   invalid: 'Veuillez saisir une adresse e-mail valide.'
 };
 
 function NewsletterForm() {
   const [error, setError] = useState(false);
+  const [disable, setDisable] = useState(true);
   const [statusMessage, setStatusMessage] = useState('');
 
   const validateEmail = (email: string) => {
     const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
     return emailRegex.test(email);
+  };
+
+  const handleInput = (event: JSX.TargetedEvent<HTMLInputElement>) => {
+    const email = event.currentTarget.value;
+    const emailIsValid = validateEmail(email);
+
+    if (emailIsValid) {
+      setDisable(false);
+      setError(false);
+      setStatusMessage('');
+    } else {
+      setDisable(true);
+      setError(true);
+      setStatusMessage(MESSAGES.invalid);
+    }
   };
 
   const handleSubmit = (event: JSX.TargetedEvent<HTMLFormElement>) => {
@@ -33,9 +50,9 @@ function NewsletterForm() {
           console.log(response);
 
           if (response.ok) {
-            form.reset();
             setStatusMessage(MESSAGES.success);
             setError(false);
+            form.reset();
           } else {
             setStatusMessage(MESSAGES.error);
             setError(true);
@@ -44,11 +61,7 @@ function NewsletterForm() {
         .catch((error) => {
           setStatusMessage(MESSAGES.error);
           setError(true);
-          console.error(error);
         });
-    } else {
-      setError(true);
-      setStatusMessage(MESSAGES.invalid);
     }
 
     event.preventDefault();
@@ -87,16 +100,18 @@ function NewsletterForm() {
           id="email"
           name="email"
           placeholder="Adresse e-mail"
+          onInput={handleInput}
           type="email"
           required
         />
       </p>
       <button
-        class="p-3 rounded-full border bg-yellow-500 h-12 w-full mt-5 dark:text-black font-semibold hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 focus:ring-offset-white focus:ring-opacity-50"
+        class="p-3 rounded-full border bg-yellow-500 disabled:bg-yellow-500 disabled:cursor-not-allowed hover:bg-yellow-600 focus:bg-yellow-600 h-12 w-full mt-5 dark:text-black font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 focus:ring-offset-white focus:ring-opacity-50"
         type="submit"
         aria-label="Submit"
+        disabled={disable}
       >
-        Abonnez-vous
+        Je m'abonne
       </button>
     </form>
   )
