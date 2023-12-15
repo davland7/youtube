@@ -11,14 +11,18 @@ function NewsletterForm() {
 
   const handleSubmit = (event: JSX.TargetedEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    const form = event.currentTarget;
-    const email = form.email.value;
-    const emailIsValid = validateEmail(email);
+    const formData = new FormData(event.target);
+    const emailIsValid = validateEmail(formData.get('email') as string);
 
     if (emailIsValid) {
-      setError(false);
-      form.submit();
+      fetch('/', {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      }).then(() => {
+        setError(false);
+      }).catch((error) =>
+        alert(error));
     } else {
       setError(true);
     }
@@ -29,7 +33,7 @@ function NewsletterForm() {
       class="flex flex-col items-center"
       data-netlify="true"
       name="newsletter"
-      method="POST"
+      id="newsletter"
       onSubmit={handleSubmit}
       noValidate
     >
@@ -62,7 +66,7 @@ function NewsletterForm() {
         required
       />
       <button
-        class="p-3 rounded-full border bg-orange-500 h-12 w-full mt-5 text-white font-semibold hover:bg-orange-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 focus:ring-offset-white focus:ring-opacity-50"
+        class="p-3 rounded-full border bg-yellow-500 h-12 w-full mt-5 dark:text-black font-semibold hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 focus:ring-offset-white focus:ring-opacity-50"
         type="submit"
         aria-label="Submit"
       >
