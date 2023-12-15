@@ -23,6 +23,7 @@ function NewsletterForm() {
       })
         .then((response) => {
           console.log(response);
+          form.reset();
           setError(false);
         })
         .catch((error) => {
@@ -62,7 +63,7 @@ function NewsletterForm() {
         for="email"
         class="sr-only"
       >
-        Adresse e-mail
+        Adresse e-mail :
       </label>
       <input
         type="email"
