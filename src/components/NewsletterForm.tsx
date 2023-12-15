@@ -25,7 +25,6 @@ function NewsletterForm() {
         .then((response) => {
           console.log(response);
           setError(false);
-          // form.reset();
         })
         .catch((error) => {
           setError(true);
@@ -39,15 +38,17 @@ function NewsletterForm() {
   return (
     <form
       class="flex flex-col items-center"
-      name="newsletter2"
+      name="newsletter"
       method="POST"
       onSubmit={handleSubmit}
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
       novalidate
      >
       <input
         type="hidden"
         name="form-name"
-        value="newsletter2"
+        value="newsletter"
       />
       <p
         role="alert"

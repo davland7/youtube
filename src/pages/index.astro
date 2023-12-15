@@ -6,6 +6,9 @@ import NewsletterForm from '@components/NewsletterForm';
 <Layout
   title="David Landry"
   description="Bienvenue sur mon site">
+  <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="email" name="email" />
+  </form>
 	<main class="sm:fixed sm:top-0 sm:right-0 sm:bottom-0 sm:left-0 landscape:static flex flex-col items-center justify-center p-8">
     <div class="text-center mb-6">
       <h1 class="text-4xl font-bold mb-2">Bienvenue sur mon site</h1>
@@ -23,9 +26,6 @@ import NewsletterForm from '@components/NewsletterForm';
       <h2 class="text-2xl font-bold mb-2">Abonnez-vous à ma newsletter</h2>
       <p>Restez informé de nos dernières actualités et annonces en vous abonnant à notre newsletter.</p>
       <NewsletterForm client:load />
-      <form name="newsletter2" data-netlify="true" netlify-honeypot="bot-field" hidden>
-        <input type="email" name="email" />
-      </form>
     </div>
     <div class="m-12">
       <a href="https://www.youtube.com/@davland7" target="_blank">
