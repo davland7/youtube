@@ -26,12 +26,12 @@ function NewsletterForm() {
 
   return (
     <form
-      action="/"
       class="flex flex-col items-center"
       data-netlify="true"
       method="POST"
       name="newsletter"
       onSubmit={handleSubmit}
+      novalidate
     >
       <input
         type="hidden"
