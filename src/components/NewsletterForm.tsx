@@ -17,8 +17,9 @@ function NewsletterForm() {
 
     if (emailIsValid) {
       fetch("/", {
-        body: formData,
-        method: "POST"
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
       })
         .then((response) => {
           setError(true);
