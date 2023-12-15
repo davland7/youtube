@@ -22,9 +22,11 @@ function NewsletterForm() {
       })
         .then(() => {
           setError(true);
+          console.log('Form successfully submitted');
         })
         .catch((error) => {
           setError(false);
+          console.log(error);
         });
     } else {
       setError(true);
