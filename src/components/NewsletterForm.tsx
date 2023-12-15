@@ -17,8 +17,20 @@ function NewsletterForm() {
     const emailIsValid = validateEmail(formData.get('email') as string);
 
     if (emailIsValid) {
-      setError(false);
-      form.submit();
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      })
+        .then((response) => {
+          console.log(response);
+          setError(false);
+          form.reset();
+        })
+        .catch((error) => {
+          setError(true);
+          console.error(error);
+        });
     } else {
       setError(true);
     }
@@ -27,12 +39,19 @@ function NewsletterForm() {
   return (
     <form
       class="flex flex-col items-center"
-      data-netlify="true"
-      method="POST"
+      id="newsletter"
       name="newsletter"
-      onSubmit={handleSubmit}
-      novalidate
-    >
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      action="/"
+     >
+      <div class="hidden" aria-hidden="true">
+        <label>
+          Don’t fill this out if you're human:
+          <input name="bot-field">
+        </label>
+      </div>
       <input
         type="hidden"
         name="form-name"
