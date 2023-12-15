@@ -25,7 +25,7 @@ function NewsletterForm() {
         .then((response) => {
           console.log(response);
           setError(false);
-          form.reset();
+          // form.reset();
         })
         .catch((error) => {
           setError(true);
@@ -39,7 +39,7 @@ function NewsletterForm() {
   return (
     <form
       class="flex flex-col items-center"
-      name="newsletter"
+      name="newsletter2"
       method="POST"
       onSubmit={handleSubmit}
       novalidate
@@ -47,7 +47,7 @@ function NewsletterForm() {
       <input
         type="hidden"
         name="form-name"
-        value="newsletter"
+        value="newsletter2"
       />
       <p
         role="alert"
