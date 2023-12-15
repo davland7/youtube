@@ -56,7 +56,6 @@ function NewsletterForm() {
 
   return (
     <form
-      class="flex flex-col items-center"
       name={FORM_NAME}
       method="POST"
       onSubmit={handleSubmit}
@@ -76,19 +75,19 @@ function NewsletterForm() {
       <p
         role="alert"
         aria-live="assertive"
-        class={`${error ? 'text-red-500' : 'text-green-500'} h-8`}
+        class={`h-12 pt-3 ${error ? 'text-red-500' : 'text-green-500'}`}
       >
         {statusMessage}
       </p>
-      <p class="w-full">
+      <p>
         <label class="sr-only">Adresse e-mail</label>
         <input
-          type="email"
-          name="email"
           aria-labelledby="email-label"
           class={`w-full h-12 rounded-full border bg-inherit p-3 shadow shadow-gray-100 appearance-none outline-none text-neutral-800 ${error ? 'border-red-500' : 'border-yellow-500'}`}
           id="email"
+          name="email"
           placeholder="Adresse e-mail"
+          type="email"
           required
         />
       </p>
@@ -97,7 +96,7 @@ function NewsletterForm() {
         type="submit"
         aria-label="Submit"
       >
-        Submit
+        Abonnez-vous
       </button>
     </form>
   )
