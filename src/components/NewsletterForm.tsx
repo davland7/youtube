@@ -45,7 +45,7 @@ function NewsletterForm() {
   return (
     <form
       class="flex flex-col items-center"
-      name="newsletter"
+      name="Newsletter"
       method="POST"
       onSubmit={handleSubmit}
       data-netlify="true"
@@ -55,7 +55,7 @@ function NewsletterForm() {
       <input
         type="hidden"
         name="form-name"
-        value="newsletter"
+        value="Newsletter"
       />
       <p
         role="alert"
