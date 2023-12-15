@@ -24,7 +24,7 @@ function NewsletterForm() {
     const emailIsValid = validateEmail(email);
 
     if (emailIsValid) {
-      fetch("/#", {
+      fetch("/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({ "form-name": "newsletter", "email": email })
