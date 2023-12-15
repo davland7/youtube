@@ -61,21 +61,19 @@ function NewsletterForm() {
       >
         {error && 'Veuillez saisir une adresse e-mail valide.'}
       </p>
-      <label
-        for="email"
-        class="sr-only"
-      >
-        Adresse e-mail
+      <label>
+        <span class="sr-only">Adresse e-mail : </span>
+        <input
+          type="email"
+          name="email"
+          aria-labelledby="email-label"
+          class={`w-full h-12 rounded-full border bg-inherit p-3 shadow shadow-gray-100 appearance-none outline-none text-neutral-800 ${error ? 'border-red-500' : 'border-orange-500'}`}
+          id="email"
+          placeholder="Adresse e-mail"
+          required
+        />
       </label>
-      <input
-        type="email"
-        name="email"
-        aria-labelledby="email-label"
-        class={`w-full h-12 rounded-full border bg-inherit p-3 shadow shadow-gray-100 appearance-none outline-none text-neutral-800 ${error ? 'border-red-500' : 'border-orange-500'}`}
-        id="email"
-        placeholder="Adresse e-mail"
-        required
-      />
+
       <button
         class="p-3 rounded-full border bg-yellow-500 h-12 w-full mt-5 dark:text-black font-semibold hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 focus:ring-offset-white focus:ring-opacity-50"
         type="submit"
