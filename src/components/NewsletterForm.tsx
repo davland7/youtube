@@ -1,6 +1,8 @@
 import type { JSX } from 'preact';
 import { useState } from 'preact/hooks';
 
+const FORM_NAME = 'newsletter';
+
 function NewsletterForm() {
   const [error, setError] = useState(false);
 
@@ -16,7 +18,7 @@ function NewsletterForm() {
     const emailIsValid = validateEmail(email);
 
     if (emailIsValid) {
-      fetch("/", {
+      fetch(FORM_NAME, {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData).toString()
@@ -40,7 +42,7 @@ function NewsletterForm() {
   return (
     <form
       class="flex flex-col items-center"
-      name="newsletter"
+      name={FORM_NAME}
       method="POST"
       onSubmit={handleSubmit}
       data-netlify="true"
@@ -50,7 +52,7 @@ function NewsletterForm() {
       <input
         type="hidden"
         name="form-name"
-        value="newsletter"
+        value={FORM_NAME}
       />
       <p
         role="alert"
