@@ -5,7 +5,7 @@
   <title>Newsletter</title>
 </head>
 <body>
-  <form name="newsletter" netlify netlify-honeypot="bot-field" hidden>
+  <form action="/newsletter" name="newsletter" netlify netlify-honeypot="bot-field" hidden>
     <input type="hidden" name="subject" value="New lead from %{formName} (%{submissionId})" />
     <label>Email address: <input type="email" name="email" /></label>
   </form>
