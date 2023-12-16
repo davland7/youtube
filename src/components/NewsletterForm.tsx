@@ -3,7 +3,7 @@ import { useState } from 'preact/hooks';
 
 const FORM_NAME = 'newsletter';
 const MESSAGES = {
-  success: 'Merci pour votre inscription !',
+  success: 'Merci pour ton inscription !',
   error: 'Une erreur est survenue, veuillez réessayer.',
   invalid: 'Veuillez saisir une adresse e-mail valide.'
 };
@@ -88,7 +88,7 @@ function NewsletterForm() {
       <p
         role="alert"
         aria-live="assertive"
-        class={`text-center h-12 pt-3 ${error ? 'text-red-500' : 'text-green-500'}`}
+        class={`h-6 mt-4 text-base text-center ${error ? 'text-red-500' : 'text-green-500'}`}
       >
         {statusMessage}
       </p>

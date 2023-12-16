@@ -61,9 +61,9 @@ const App = () => {
       <table class="table-auto w-full min-h-[451px]">
         <thead>
           <tr>
-            <th id="name" class="p-2 border border-black dark:border-white">Nom</th>
-            <th id="code" class="p-2 border border-black dark:border-white">Code</th>
-            <th id="value" class="p-2 border border-black dark:border-white">Valeur</th>
+            <th id="name" class="px-2 py-4 border border-black dark:border-white">Nom</th>
+            <th id="code" class="px-2 py-4 border border-black dark:border-white">Code</th>
+            <th id="value" class="px-2 py-4 border border-black dark:border-white">Valeur</th>
           </tr>
         </thead>
         <tbody>
@@ -86,7 +86,7 @@ const App = () => {
       <p class="mt-4">
         <label class="block mb-2">Montant</label>
         <input
-          class="w-full h-12 p-3 rounded-2xl border bg-inherit text-inherit border-yellow-500"
+          class="w-full h-12 p-3 rounded-2xl border bg-inherit text-inherit border-black dark:border-white"
           name="amount"
           type="number"
           value={amount}
