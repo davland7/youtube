@@ -10,26 +10,26 @@ export default defineConfig({
     AstroPWA({
       devOptions: { enabled: true },
       manifest: {
-        name: "@davland7",
+        name: "YouTube/@davland7",
         short_name: "@davland7",
-        description: "YouTube/@davland7",
-        background_color: "#ffffff",
+        description: "Ma chaine YouTube",
+        background_color: "#000000",
         theme_color: "#000000",
         orientation: "portrait",
         id: "/?source=pwa",
         start_url: "/?source=pwa",
         scope: "/",
         icons: [
-        {
-          src: "images/pwa-192x192.png",
-          sizes: "192x192",
-          type: "image/png"
-        },
-        {
-          src: "images/pwa-512x512.png",
-          sizes: "512x512",
-          type: "image/png"
-        }
+          {
+            src: "images/pwa-192x192.png",
+            sizes: "192x192",
+            type: "image/png"
+          },
+          {
+            src: "images/pwa-512x512.png",
+            sizes: "512x512",
+            type: "image/png"
+          }
         ]
       },
       registerType: "autoUpdate"
