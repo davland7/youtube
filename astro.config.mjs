@@ -10,12 +10,15 @@ export default defineConfig({
     AstroPWA({
       devOptions: { enabled: true },
       manifest: {
-        name: "YouTube/@davland7",
+        name: "@davland7",
         short_name: "@davland7",
-        description: "Ma chaine YouTube",
-        background_color: "#000000",
-        theme_color: "#eab308",
+        description: "YouTube/@davland7",
+        background_color: "#ffffff",
+        theme_color: "#000000",
         orientation: "portrait",
+        id: "/?source=pwa",
+        start_url: "/?source=pwa",
+        scope: "/",
         icons: [
         {
           src: "images/pwa-192x192.png",
