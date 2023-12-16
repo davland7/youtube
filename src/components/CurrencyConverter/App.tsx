@@ -72,7 +72,7 @@ const App = () => {
             role="button"
             tabIndex={0}
             key={i}
-            class={`cursor-pointer ${item.code === code && 'bg-yellow-500 dark:text-black'}`}
+            class={`cursor-pointer ${item.code === code ? 'bg-yellow-500 dark:text-black' : ''}`}
             onClick={() => setCode(item.code)}
             onKeyDown={(e) => e.key === 'Enter' && setCode(item.code)}
           >
@@ -86,7 +86,7 @@ const App = () => {
       <p class="mt-4">
         <label class="block mb-2">Montant</label>
         <input
-          class="w-full h-12 rounded-lg border bg-inherit p-3 text-inherit border-yellow-500"
+          class="w-full h-12 p-3 rounded-l-2xl border bg-inherit text-inherit border-yellow-500"
           name="amount"
           type="number"
           value={amount}
