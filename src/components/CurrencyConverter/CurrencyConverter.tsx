@@ -84,7 +84,11 @@ const App = () => {
         </tbody>
       </table>
       <p class="mt-4">
-        <label class="block mb-2">Montant</label>
+        <label
+          class="block mb-2"
+          for="amount">
+            Montant
+        </label>
         <input
           class="w-full h-12 p-3 rounded-full border bg-inherit text-inherit border-black dark:border-white"
           name="amount"
