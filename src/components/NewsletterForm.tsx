@@ -5,7 +5,7 @@ const FORM_NAME = 'newsletter';
 const MESSAGES = {
   success: 'Merci pour ton inscription !',
   error: 'Une erreur est survenue, veuillez réessayer.',
-  invalid: 'Veuillez saisir une adresse e-mail valide.'
+  invalid: 'Ton adresse e-mail n\'est pas valide.'
 };
 
 function NewsletterForm() {
@@ -96,7 +96,7 @@ function NewsletterForm() {
         <label class="block mb-2">Adresse e-mail</label>
         <input
           aria-labelledby="email-label"
-          class={`w-full h-12 p-3 rounded-2xl border bg-inherit text-inherit ${error ? 'border-red-500' : 'border-black dark:border-white'}`}
+          class={`w-full h-12 p-3 rounded-full border bg-inherit text-inherit ${error ? 'border-red-500' : 'border-black dark:border-white'}`}
           id="email"
           name="email"
           placeholder=""
@@ -106,7 +106,7 @@ function NewsletterForm() {
         />
       </p>
       <button
-        class="p-3 mb-2 rounded-2xl border bg-yellow-400 disabled:bg-yellow-400 disabled:cursor-not-allowed hover:bg-yellow-500 focus:bg-yellow-500 h-12 w-full mt-5 dark:text-black font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 focus:ring-offset-white focus:ring-opacity-50"
+        class="p-3 mb-2 rounded-full border bg-yellow-400 disabled:bg-yellow-400 disabled:cursor-not-allowed hover:bg-yellow-500 focus:bg-yellow-500 h-12 w-full mt-5 dark:text-black font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 focus:ring-offset-white focus:ring-opacity-50"
         type="submit"
         aria-label="Submit"
         disabled={disable}

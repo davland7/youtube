@@ -86,7 +86,7 @@ const App = () => {
       <p class="mt-4">
         <label class="block mb-2">Montant</label>
         <input
-          class="w-full h-12 p-3 rounded-2xl border bg-inherit text-inherit border-black dark:border-white"
+          class="w-full h-12 p-3 rounded-full border bg-inherit text-inherit border-black dark:border-white"
           name="amount"
           type="number"
           value={amount}
