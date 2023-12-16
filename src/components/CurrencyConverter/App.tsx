@@ -57,13 +57,13 @@ const App = () => {
   };
 
   return (
-    <div class="p-6 max-w-xl m-auto xl:m-0">
+    <div class="p-6 w-full max-w-xl m-auto xl:m-0">
       <table class="table-auto w-full min-h-[451px]">
         <thead>
           <tr>
-            <th id="name" class="px-4 py-2 bg-gray-200 dark:text-black">Nom</th>
-            <th id="code" class="px-4 py-2 bg-gray-200 dark:text-black">Code</th>
-            <th id="value" class="px-4 py-2 bg-gray-200 dark:text-black">Valeur</th>
+            <th id="name" class="px-4 py-2 border">Nom</th>
+            <th id="code" class="px-4 py-2 border">Code</th>
+            <th id="value" class="px-4 py-2 border">Valeur</th>
           </tr>
         </thead>
         <tbody>
@@ -83,16 +83,16 @@ const App = () => {
         ))}
         </tbody>
       </table>
-      <label class="block">
-        <span class="text-gray-700">Montant:</span>
+      <p class="mt-4">
+        <label class="block mb-2">Montant</label>
         <input
-          class="mt-1 block w-full"
+          class="w-full h-12 rounded-lg border bg-inherit p-3 text-inherit border-yellow-500"
           name="amount"
           type="number"
           value={amount}
           onChange={(e) => setAmount(parseFloat((e.target as HTMLInputElement).value))}
         />
-      </label>
+      </p>
     </div>
   );
 };

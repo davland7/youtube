@@ -1,4 +1,4 @@
-import type { Handler, HandlerEvent, HandlerContext } from "@netlify/functions";
+import type { Handler, HandlerEvent } from "@netlify/functions";
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': process.env.ACCESS_CONTROL_ALLOW_ORIGIN as string,
@@ -6,7 +6,7 @@ const CORS_HEADERS = {
   'Access-Control-Allow-Methods': 'GET, POST, OPTIONS'
 }
 
-const handler: Handler = async (event: HandlerEvent, context: HandlerContext) => {
+const handler: Handler = async (event: HandlerEvent) => {
   try {
     if (event.httpMethod === 'OPTIONS') {
       return {

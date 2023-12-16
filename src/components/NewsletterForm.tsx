@@ -4,7 +4,6 @@ import { useState } from 'preact/hooks';
 const FORM_NAME = 'newsletter';
 const MESSAGES = {
   success: 'Merci pour votre inscription !',
-  empty: 'Veuillez saisir une adresse e-mail.',
   error: 'Une erreur est survenue, veuillez réessayer.',
   invalid: 'Veuillez saisir une adresse e-mail valide.'
 };
@@ -41,7 +40,7 @@ function NewsletterForm() {
     const emailIsValid = validateEmail(email);
 
     if (emailIsValid) {
-      fetch('/', {
+      fetch(FORM_NAME, {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData as any).toString()
@@ -94,13 +93,13 @@ function NewsletterForm() {
         {statusMessage}
       </p>
       <p>
-        <label class="sr-only">Adresse e-mail</label>
+        <label class="block mb-4">Adresse e-mail</label>
         <input
           aria-labelledby="email-label"
-          class={`w-full h-12 rounded-full border bg-inherit p-3 shadow shadow-gray-100 appearance-none outline-none text-neutral-800 ${error ? 'border-red-500' : 'border-yellow-500'}`}
+          class={`w-full h-12 rounded-full border bg-inherit p-3 text-inherit ${error ? 'border-red-500' : 'border-yellow-500'}`}
           id="email"
           name="email"
-          placeholder="Adresse e-mail"
+          placeholder=""
           onInput={handleInput}
           type="email"
           required
