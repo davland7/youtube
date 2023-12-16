@@ -13,17 +13,12 @@ export default defineConfig({
         name: "YouTube/@davland7",
         short_name: "@davland7",
         description: "Ma chaine YouTube",
-        background_color: "#000000",
+        background_color: "#eab308",
         orientation: "portrait",
         id: "/?source=pwa",
         start_url: "/?source=pwa",
         scope: "/",
         icons: [
-          {
-            src: "images/pwa-192x192.png",
-            sizes: "192x192",
-            type: "image/png"
-          },
           {
             src: "images/pwa-512x512.png",
             sizes: "512x512",
