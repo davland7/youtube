@@ -31,6 +31,4 @@ Nam rhoncus lobortis augue, at posuere libero. Vivamus egestas nulla at lacus lu
 
 Nunc non urna ac lorem rhoncus tincidunt. Cras dignissim bibendum purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse tempus nibh sit amet finibus accumsan. Maecenas consequat ullamcorper tortor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas at mi vitae nisi vestibulum bibendum id at mi. Quisque quis eros et felis tristique commodo. Donec pretium accumsan condimentum. Proin posuere magna non lorem posuere tempus. Etiam ac ligula dapibus, molestie felis quis, commodo ex. Nulla et convallis sapien, quis pharetra tellus.
 
-## Auteur
-
-David Landry
+[![YouTube](https://davland7.netlify.app/images/yt_logo_rgb_dark.png)](https://youtu.be/28ZBdaxW5vc?si=GHDNowcc1N6yPvGm)

@@ -22,8 +22,17 @@ function NavBar({
   }, [open]);
 
   return (
-    <nav role="navigation" class="fixed top-0 right-0 left-0 m-auto w-full flex justify-between">
-      <a aria-label="Accueil" role="link" href="/" class={`${open ? 'hidden' : 'flex'} xl:flex items-center justify-center w-12 h-12 bg-white dark:bg-black rounded-br-2xl`}>
+    <nav
+      class="fixed top-0 right-0 left-0 m-auto w-full flex justify-between"
+      role="navigation"
+    >
+      <a
+        class={`${open ? 'hidden' : 'flex'} xl:flex items-center justify-center w-12 h-12 bg-white dark:bg-black rounded-br-2xl`}
+        aria-label="Accueil"
+        role="link"
+        href="/"
+        target="_self"
+      >
         <Home />
       </a>
       <button
@@ -36,7 +45,6 @@ function NavBar({
       </button>
       <a
         aria-label="Code source"
-        target="_blank"
         role="link"
         href={codeUrl}
         class={`${open ? 'flex' : 'hidden'} md:flex items-center justify-center w-12 h-12 bg-white dark:bg-black rounded-bl-2xl`}>

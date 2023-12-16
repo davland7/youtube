@@ -24,9 +24,10 @@ const { title, description } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+    <base target="_blank">
 		<title>{title}</title>
 	</head>
-	<body class="mt-12 dark:bg-black dark:text-white selection:bg-yellow-500 selection:text-black">
+	<body class="mt-12 dark:bg-black dark:text-white selection:bg-yellow-400 selection:text-black">
     <slot />
 	</body>
 </html>
