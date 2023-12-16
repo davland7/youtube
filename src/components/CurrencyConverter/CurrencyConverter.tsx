@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'preact/hooks';
 
-type CurrenciesProps = {
+interface CurrenciesProps {
   code: string;
   currencies: {
     CAD: number;
@@ -61,9 +61,9 @@ const App = () => {
       <table class="table-auto w-full min-h-[451px]">
         <thead>
           <tr>
-            <th id="name" class="px-4 py-2 border">Nom</th>
-            <th id="code" class="px-4 py-2 border">Code</th>
-            <th id="value" class="px-4 py-2 border">Valeur</th>
+            <th id="name" class="p-2 border border-black dark:border-white">Nom</th>
+            <th id="code" class="p-2 border border-black dark:border-white">Code</th>
+            <th id="value" class="p-2 border border-black dark:border-white">Valeur</th>
           </tr>
         </thead>
         <tbody>
@@ -72,13 +72,13 @@ const App = () => {
             role="button"
             tabIndex={0}
             key={i}
-            class={`cursor-pointer ${item.code === code ? 'bg-yellow-500 dark:text-black' : ''}`}
+            class={`cursor-pointer ${item.code === code ? 'bg-yellow-500 dark:text-black' : ''} `}
             onClick={() => setCode(item.code)}
             onKeyDown={(e) => e.key === 'Enter' && setCode(item.code)}
           >
-            <td headers="name" class="border px-2 py-2">{item.name}</td>
-            <td headers="code" class="border px-2 py-2">{item.code}</td>
-            <td headers="value" class="border px-2 py-2">{getAmount(item.value)}</td>
+            <td headers="name" class="p-2 border border-black dark:border-white">{item.name}</td>
+            <td headers="code" class="p-2 border border-black dark:border-white">{item.code}</td>
+            <td headers="value" class="p-2 border border-black dark:border-white">{getAmount(item.value)}</td>
           </tr>
         ))}
         </tbody>

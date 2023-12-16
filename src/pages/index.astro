@@ -9,18 +9,21 @@ import Newsletter from '@components/Newsletter.astro';
   <div class="m-auto max-w-lg">
     <Newsletter />
     <main class="flex flex-col items-center justify-center">
-      <div class="text-center mb-6">
-        <h2 class="text-2xl font-bold mb-2">Pages</h2>
-        <ul class="flex flex-col items-center justify-center space-y-4">
-          <li>
-            <a href="/convertisseur-de-devises" class="my-2 text-yellow-500 underline hover:no-underline">Convertisseur de devises</a>
-          </li>
-        </ul>
-      </div>
+      <h2 class="mb-6 text-2xl font-bold text-center">
+        Pages
+      </h2>
+      <ul class="mb-6 list-disc text-lg">
+        <li>
+          <a href="/convertisseur-de-devises" class="text-yellow-500 underline hover:no-underline">
+            Convertisseur de devises
+          </a>
+        </li>
+      </ul>
     </main>
     <footer class="flex justify-center m-12">
       <a href="https://www.youtube.com/@davland7" target="_blank">
-        <img src="/images/yt_logo_rgb_light.png" alt="YouTube Logo" class="w-[128px]" />
+        <img class="block dark:hidden w-[128px]" src="/images/yt_logo_rgb_light.png" alt="YouTube Logo" />
+        <img class="hidden dark:block w-[128px]" src="/images/yt_logo_rgb_dark.png" alt="YouTube Logo" />
       </a>
     </footer>
   </div>

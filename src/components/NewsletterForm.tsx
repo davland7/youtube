@@ -96,7 +96,7 @@ function NewsletterForm() {
         <label class="block mb-2">Adresse e-mail</label>
         <input
           aria-labelledby="email-label"
-          class={`w-full h-12 rounded-2xl border bg-inherit p-3 text-inherit ${error ? 'border-red-500' : 'border-yellow-500'}`}
+          class={`w-full h-12 p-3 rounded-2xl border bg-inherit text-inherit ${error ? 'border-red-500' : 'border-yellow-500'}`}
           id="email"
           name="email"
           placeholder=""
