@@ -13,6 +13,7 @@ export default defineConfig({
         name: "YouTube/@davland7",
         short_name: "@davland7",
         description: "Ma chaine YouTube",
+        background_color: "#000000",
         theme_color: "#eab308",
         orientation: "portrait",
         icons: [

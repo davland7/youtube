@@ -90,6 +90,7 @@ const App = () => {
             Montant
         </label>
         <input
+          aria-label="Montant"
           class="w-full h-12 p-3 rounded-full border bg-inherit text-inherit border-black dark:border-white"
           name="amount"
           type="number"

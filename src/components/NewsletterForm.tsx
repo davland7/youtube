@@ -93,11 +93,15 @@ function NewsletterForm() {
         {statusMessage}
       </p>
       <p>
-        <label class="block mb-2">Adresse e-mail</label>
+        <label
+          class="block mb-2"
+          for="email"
+        >
+          Adresse e-mail
+        </label>
         <input
-          aria-labelledby="email-label"
+          aria-label="Adresse e-mail"
           class={`w-full h-12 p-3 rounded-full border bg-inherit text-inherit ${error ? 'border-red-500' : 'border-black dark:border-white'}`}
-          id="email"
           name="email"
           placeholder=""
           onInput={handleInput}
@@ -108,7 +112,7 @@ function NewsletterForm() {
       <button
         class="p-3 mb-2 rounded-full border bg-yellow-400 disabled:bg-yellow-400 disabled:cursor-not-allowed hover:bg-yellow-500 focus:bg-yellow-500 h-12 w-full mt-5 dark:text-black font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 focus:ring-offset-white focus:ring-opacity-50"
         type="submit"
-        aria-label="Submit"
+        aria-label="Je m'abonne"
         disabled={disable}
       >
         Je m'abonne
