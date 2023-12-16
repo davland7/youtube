@@ -1,12 +1,13 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import Footer from '@components/Footer.astro';
+import Newsletter from '@components/Newsletter.astro';
 ---
 
 <Layout
   title="David Landry"
   description="Bienvenue sur mon site">
-  <div class="flex flex-col-reverse m-auto max-w-lg">
+  <div class="m-auto max-w-lg">
+    <Newsletter />
     <main class="flex flex-col items-center justify-center">
       <div class="text-center mb-6">
         <h2 class="text-2xl font-bold mb-2">Pages</h2>
@@ -17,6 +18,10 @@ import Footer from '@components/Footer.astro';
         </ul>
       </div>
     </main>
-    <Footer />
+    <footer class="flex justify-center m-12">
+      <a href="https://www.youtube.com/@davland7" target="_blank">
+        <img src="/images/yt_logo_rgb_light.png" alt="YouTube Logo" class="w-[128px]" />
+      </a>
+    </footer>
   </div>
 </Layout>
