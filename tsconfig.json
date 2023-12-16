@@ -7,6 +7,11 @@
     "paths": {
       "@components/*": ["./components/*"],
       "@layouts/*": ["./layouts/*"],
-    }
+    },
+    "types": [
+      "astro/client",
+      "vite-plugin-pwa/client",
+      "vite-plugin-pwa/info",
+    ]
   }
 }

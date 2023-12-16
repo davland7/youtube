@@ -1,4 +1,7 @@
 ---
+
+import { pwaInfo } from "virtual:pwa-info";
+
 interface Props {
 	title: string;
 	description: string;
@@ -22,10 +25,12 @@ const { title, description } = Astro.props;
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
     <base target="_blank">
 		<title>{title}</title>
+    <script src="/src/pwa.ts"></script>
+    { pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} /> }
 	</head>
 	<body class="mt-12 dark:bg-black dark:text-white selection:bg-yellow-400 selection:text-black">
     <slot />
