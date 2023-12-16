@@ -14,7 +14,6 @@ export default defineConfig({
         short_name: "@davland7",
         description: "Ma chaine YouTube",
         background_color: "#000000",
-        theme_color: "#000000",
         orientation: "portrait",
         id: "/?source=pwa",
         start_url: "/?source=pwa",
