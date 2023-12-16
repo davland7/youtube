@@ -57,7 +57,7 @@ const App = () => {
   };
 
   return (
-    <div class="p-6 w-full max-w-xl m-auto xl:m-0">
+    <div class="p-6 w-full max-w-md m-auto xl:m-0">
       <table class="table-auto w-full min-h-[451px]">
         <thead>
           <tr>
@@ -86,7 +86,7 @@ const App = () => {
       <p class="mt-4">
         <label class="block mb-2">Montant</label>
         <input
-          class="w-full h-12 p-3 rounded-l-2xl border bg-inherit text-inherit border-yellow-500"
+          class="w-full h-12 p-3 rounded-2xl border bg-inherit text-inherit border-yellow-500"
           name="amount"
           type="number"
           value={amount}

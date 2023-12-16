@@ -1,6 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import App from '@components/CurrencyConverter/App';
+import CurrencyConverter from '@components/CurrencyConverter/CurrencyConverter';
 import NavBar from '@components/NavBar';
 import { Content as README } from '@components/CurrencyConverter/README.md';
 ---
@@ -12,7 +12,7 @@ import { Content as README } from '@components/CurrencyConverter/README.md';
   <NavBar codeUrl="https://github.com/davland7/youtube/tree/main/src/components/CurrencyConverter" client:load />
   <main class="flex md:flex-col w-full">
     <aside class="hidden md:inline xl:fixed xl:bottom-0 xl:right-[62%] xl:flex xl:justify-end w-full xl:w-[38%]">
-      <App client:load />
+      <CurrencyConverter client:load />
     </aside>
     <section class="flex flex-col w-full xl:w-[62%] xl:ml-[38%]">
       <article class="w-full md:max-w-screen-md md:m-auto xl:m-0 p-6 prose-base prose-a:text-blue-600">
