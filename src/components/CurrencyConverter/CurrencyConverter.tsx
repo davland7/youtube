@@ -48,10 +48,10 @@ const App = () => {
     });
   }, [code, currencies]);
 
-  const getAmount = (value: number) => {
+  const getAmount = (currency: string, value: number) => {
     return (value * amount).toLocaleString('fr-CA', {
       style: 'currency',
-      currency: code,
+      currency,
       minimumSignificantDigits: 10
     });
   };
@@ -78,7 +78,7 @@ const App = () => {
           >
             <td headers="name" class="p-2 border border-black dark:border-white">{item.name}</td>
             <td headers="code" class="p-2 border border-black dark:border-white">{item.code}</td>
-            <td headers="value" class="p-2 border border-black dark:border-white">{getAmount(item.value)}</td>
+            <td headers="value" class="p-2 border border-black dark:border-white">{getAmount(code, item.value)}</td>
           </tr>
         ))}
         </tbody>

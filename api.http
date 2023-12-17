@@ -6,7 +6,6 @@ GET http://localhost:8888/.netlify/functions/currencies
 
 POST http://localhost:8888/.netlify/functions/currencies
 
-
 ###
 
 GET https://davland7.netlify.app/.netlify/functions/currencies

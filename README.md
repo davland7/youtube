@@ -7,19 +7,6 @@ pnpm add -D @types/node
 pnpm add -D @tailwindcss/forms @tailwindcss/typography
 ```
 
-Add `netlify.toml`:
-
-```bash
-[build]
-  command = "pnpm run build"
-  publish = "dist"
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
-  status = 200
-  force = true
-```
-
 Change `package.json`:
 
 ```bash
