@@ -1,12 +1,16 @@
 import { defineConfig } from "astro/config";
 import preact from "@astrojs/preact";
 import tailwind from "@astrojs/tailwind";
-import netlify from '@astrojs/netlify/functions';
+import netlify from "@astrojs/netlify";
 import AstroPWA from "@vite-pwa/astro";
 
 // https://astro.build/config
 export default defineConfig({
- integrations: [
+  i18n: {
+    defaultLocale: "fr",
+    locales: ["en", "fr"],
+  },
+  integrations: [
     AstroPWA({
       devOptions: { enabled: true },
       manifest: {
