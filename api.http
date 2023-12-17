@@ -1,14 +1,11 @@
 # Get all currencies
 
-GET http://localhost:8888/api/currencies
+GET http://localhost:8888/.netlify/functions/currencies
 
 ###
 
-POST http://localhost:8888/api/currencies
+POST http://localhost:8888/.netlify/functions/currencies
 
-###
-
-OPTIONS http://localhost:8888/api/currencies
 
 ###
 
@@ -16,12 +13,4 @@ GET https://davland7.netlify.app/.netlify/functions/currencies
 
 ###
 
-GET https://davland7.netlify.app/api/currencies
-
-###
-
 POST https://davland7.netlify.app/.netlify/functions/currencies
-
-###
-
-OPTIONS https://davland7.netlify.app/.netlify/functions/currencies
