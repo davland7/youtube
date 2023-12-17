@@ -103,7 +103,7 @@ function NewsletterForm() {
           aria-label="Adresse e-mail"
           class={`w-full h-12 p-3 rounded-full border bg-inherit text-inherit ${error ? 'border-red-500' : 'border-black dark:border-white'}`}
           name="email"
-          placeholder=""
+          placeholder="exemple@gmail.com"
           onInput={handleInput}
           type="email"
           required
