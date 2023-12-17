@@ -16,6 +16,10 @@ GET https://davland7.netlify.app/.netlify/functions/currencies
 
 ###
 
+GET https://davland7.netlify.app/api/currencies
+
+###
+
 POST https://davland7.netlify.app/.netlify/functions/currencies
 
 ###
