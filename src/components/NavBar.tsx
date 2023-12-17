@@ -23,7 +23,7 @@ function NavBar({
 
   return (
     <nav
-      class="fixed top-0 right-0 left-0 m-auto w-full flex justify-between"
+      class="fixed top-0 right-0 left-0 w-full m-auto flex justify-between"
       role="navigation"
     >
       <a
