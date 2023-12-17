@@ -23,7 +23,7 @@ const App = () => {
 
   useEffect(() => {
     async function getData() {
-      const response = await fetch('/.netlify/functions/currencies', {
+      const response = await fetch('/api/currencies', {
         method: 'POST',
         signal: controller.signal
       });
