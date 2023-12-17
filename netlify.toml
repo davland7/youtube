@@ -1,5 +1,4 @@
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
-  status = 301
-  force = true
+  status = 200
