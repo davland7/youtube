@@ -53,3 +53,8 @@ Les devises, également connues sous le nom de monnaies, ont joué un rôle esse
 Au fil du temps, les civilisations ont développé des systèmes monétaires plus sophistiqués, introduisant des pièces de monnaie frappées et des billets de banque. Les grandes puissances économiques ont créé leurs propres devises, reflétant leur influence et leur stabilité financière. L'histoire des devises est également marquée par des moments clés tels que l'adoption généralisée de l'étalon-or au XIXe siècle et l'évolution vers les systèmes de changes flottants au XXe siècle.
 
 Aujourd'hui, les devises sont plus que de simples instruments d'échange ; elles sont le reflet des économies nationales, des politiques monétaires et des dynamiques commerciales mondiales. L'avènement de la mondialisation a conduit à une interconnexion plus étroite des marchés financiers, influençant les taux de change et redéfinissant la nature même des devises dans un monde en constante évolution. L'histoire des devises continue d'évoluer, façonnée par les forces économiques, politiques et technologiques de notre époque.
+
+## Code et vidéo
+
+- [GitHub](https://github.com/davland7/youtube/tree/main/src/components/CurrencyConverter)
+- [YouTube](https://youtu.be/28ZBdaxW5vc?si=GHDNowcc1N6yPvGm)

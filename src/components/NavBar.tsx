@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'preact/hooks';
-import { ArrowLeft, Calculator, Home, YouTube } from '@components/Icons';
+import { ArrowLeft, Calculator, CodeBracketSquare, Home } from '@components/Icons';
 
 function NavBar({
   codeUrl
@@ -48,7 +48,7 @@ function NavBar({
         role="link"
         href={codeUrl}
         class={`${open ? 'flex' : 'hidden'} md:flex items-center justify-center w-12 h-12 bg-white dark:bg-black rounded-bl-2xl`}>
-        <YouTube />
+        <CodeBracketSquare />
       </a>
     </nav>
   );
