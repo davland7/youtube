@@ -1,5 +1,7 @@
 # Convertiseur de devises
 
+![Devises](https://davland7.netlify.app/images/_a75c1761-511d-4be2-b97d-3190996c8cdb.jpg)
+
 ## Description
 
 Ce composant permet de convertir des devises.
@@ -12,6 +14,10 @@ Ce composant permet de convertir des devises.
 | `onConvert` | `function` | `() => {}` | Fonction appelée lors de la conversion |
 
 ## Exemples
+
+| $ (Dollar canadien) | CHF (Franc suisse) | ¥ (Yuan chinois) | € (Euro) | £ (Livre sterling) | ¥ (Yen japonais) | $ (Dollar américain) |
+| ------------------- | ------------------ | ---------------- | -------- | ------------------ | ---------------- | -------------------- |
+| 1                   | 0.6381630236       | 5.407640159      | 0.681785 | 0.591617762        | 107.4065797      | 0.75720289           |
 
 Retour de l'API
 
@@ -45,12 +51,12 @@ const getAmount = (currency: string, value: number) => {
 };
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pellentesque, mauris nec vulputate placerat, ex justo faucibus sapien, pharetra egestas purus libero molestie nisi. Quisque eu vehicula erat, at dignissim erat. Proin ultrices sapien quis iaculis volutpat. Mauris laoreet massa ac massa interdum porttitor. Pellentesque tincidunt orci sem, eu sodales nisi aliquet vitae. Proin non auctor nibh, nec commodo odio. Mauris tristique fringilla sollicitudin. Ut molestie elementum sem nec rhoncus. Suspendisse in porta risus. Nam porta mi lobortis erat eleifend, et bibendum erat sagittis. Maecenas vestibulum, velit a feugiat congue, sapien quam pellentesque nisi, et rutrum sem nibh ac libero. Donec semper erat ex, a suscipit est dictum et.
+## Histoire des devises
 
-Sed semper lorem et mi imperdiet convallis. Morbi non tempor neque. Sed ac mi sit amet erat scelerisque lobortis ac ac felis. Mauris cursus finibus lectus, pharetra rhoncus sem finibus non. Suspendisse pharetra nec quam non imperdiet. Vestibulum non lectus quis ex hendrerit mattis. Mauris vitae elit molestie, elementum diam tristique, eleifend magna. Morbi massa urna, luctus convallis scelerisque sit amet, laoreet nec urna. Donec malesuada volutpat sem, a vestibulum risus fringilla sed. Maecenas facilisis volutpat velit a ultrices. Etiam ac odio auctor, dignissim augue non, tincidunt massa. Fusce et finibus leo. Nunc feugiat justo ac lacus porttitor ornare cursus nec nunc. Nunc molestie vehicula fermentum.
+Les devises, également connues sous le nom de monnaies, ont joué un rôle essentiel dans l'évolution économique et sociale de l'humanité à travers les siècles. L'histoire des devises remonte à l'Antiquité, lorsque les premières formes de monnaie ont émergé pour faciliter les échanges commerciaux. Ces premières devises étaient souvent des métaux précieux tels que l'or et l'argent, utilisés pour établir la valeur des biens et services.
 
-Nam rhoncus lobortis augue, at posuere libero. Vivamus egestas nulla at lacus luctus, vel commodo ante scelerisque. Nam semper lorem non tempor consectetur. Nullam quis ultricies odio, eget convallis orci. Nulla laoreet nisi eget libero sodales, ut convallis mauris venenatis. In dolor ex, lobortis gravida sem et, aliquet mollis ligula. Maecenas in auctor purus. Fusce at lorem tempus, porttitor quam non, vehicula justo. Phasellus tellus mauris, commodo in justo ut, posuere eleifend sapien. Aliquam erat volutpat. Vivamus at lectus varius, elementum lorem vitae, tristique elit. Ut vehicula pretium neque.
+Au fil du temps, les civilisations ont développé des systèmes monétaires plus sophistiqués, introduisant des pièces de monnaie frappées et des billets de banque. Les grandes puissances économiques ont créé leurs propres devises, reflétant leur influence et leur stabilité financière. L'histoire des devises est également marquée par des moments clés tels que l'adoption généralisée de l'étalon-or au XIXe siècle et l'évolution vers les systèmes de changes flottants au XXe siècle.
 
-Nunc non urna ac lorem rhoncus tincidunt. Cras dignissim bibendum purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse tempus nibh sit amet finibus accumsan. Maecenas consequat ullamcorper tortor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas at mi vitae nisi vestibulum bibendum id at mi. Quisque quis eros et felis tristique commodo. Donec pretium accumsan condimentum. Proin posuere magna non lorem posuere tempus. Etiam ac ligula dapibus, molestie felis quis, commodo ex. Nulla et convallis sapien, quis pharetra tellus.
+Aujourd'hui, les devises sont plus que de simples instruments d'échange ; elles sont le reflet des économies nationales, des politiques monétaires et des dynamiques commerciales mondiales. L'avènement de la mondialisation a conduit à une interconnexion plus étroite des marchés financiers, influençant les taux de change et redéfinissant la nature même des devises dans un monde en constante évolution. L'histoire des devises continue d'évoluer, façonnée par les forces économiques, politiques et technologiques de notre époque.
 
 [![YouTube](https://davland7.netlify.app/images/youtube-icon.png)](https://youtu.be/28ZBdaxW5vc?si=GHDNowcc1N6yPvGm)
