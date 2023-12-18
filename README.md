@@ -21,8 +21,6 @@ Update all packages
 pnpm up
 ```
 
-```bash
-
 [Icon](https://www.iconpacks.net/free-icon/youtube-logo-7128.html) by [Iconpacks](https://iconpacks.net/?utm_source=link-attribution&utm_content=7127)
 
 [heroicons](https://heroicons.com/)
