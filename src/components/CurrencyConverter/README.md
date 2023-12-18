@@ -4,20 +4,13 @@
 
 ## Description
 
-Ce composant permet de convertir des devises.
-
-## Props
-
-| Props | Type | Default props | Description |
-| ----- | ---- | ------------- | ----------- |
-| `currencies` | `array` | `[]` | Liste des devises |
-| `onConvert` | `function` | `() => {}` | Fonction appelée lors de la conversion |
+Calculatrice qui permet de convertir des devises.
 
 ## Exemples
 
-| $ (Dollar canadien) | CHF (Franc suisse) | ¥ (Yuan chinois) | € (Euro) | £ (Livre sterling) | ¥ (Yen japonais) | $ (Dollar américain) |
-| ------------------- | ------------------ | ---------------- | -------- | ------------------ | ---------------- | -------------------- |
-| 1                   | 0.6381630236       | 5.407640159      | 0.681785 | 0.591617762        | 107.4065797      | 0.75720289           |
+| $ CAD | CHF | ¥ CHF | € EUR | £ GBP | ¥ JPY | $ USD |
+| ----- | --- | ----- | ----- | ----- | ----- | ----- |
+| 1 | 0.64 | 5.41 | 0.68 | 0.59 | 107.41 | 0.76 |
 
 Retour de l'API
 
