@@ -13,8 +13,6 @@ Ce composant permet de convertir des devises.
 
 ## Exemples
 
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRA5BiJUKJ9BCftgCP6UtKg9IifRTHfC7S0jdNF1s1do9YT6F2wpCJBQkWNQJUAclB5yDbEtq8VkypX/pubhtml?gid=994685466&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
-
 Retour de l'API
 
 ```Json
