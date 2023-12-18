@@ -37,11 +37,11 @@ Retour de l'API
 La fonction native toLocalString permet de formater un nombre en fonction de la langue et de la devise(CAD).
 
 ```typescript
-const getAmount = (currency: string, value: number) => {
-  return (value * amount).toLocaleString('fr-CA', {
-    style: 'currency',
+const getAmount = (currency: string, locale: string, value: number) => {
+  return (value * amount).toLocaleString(locale, {
     currency,
-    minimumSignificantDigits: 10
+    minimumSignificantDigits: 10,
+    style: 'currency'
   });
 };
 ```

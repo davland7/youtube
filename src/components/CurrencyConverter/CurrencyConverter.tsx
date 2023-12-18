@@ -48,11 +48,11 @@ const App = () => {
     });
   }, [code, currencies]);
 
-  const getAmount = (currency: string, value: number) => {
-    return (value * amount).toLocaleString('fr-CA', {
-      style: 'currency',
+  const getAmount = (currency: string, locale: string, value: number) => {
+    return (value * amount).toLocaleString(locale, {
       currency,
-      minimumSignificantDigits: 10
+      minimumSignificantDigits: 10,
+      style: 'currency'
     });
   };
 
@@ -78,7 +78,7 @@ const App = () => {
           >
             <td headers="name" class="p-2 border border-black dark:border-white">{item.name}</td>
             <td headers="code" class="p-2 border border-black dark:border-white">{item.code}</td>
-            <td headers="value" class="p-2 border border-black dark:border-white">{getAmount(code, item.value)}</td>
+            <td headers="value" class="p-2 border border-black dark:border-white">{getAmount(code, 'fr-CA', item.value)}</td>
           </tr>
         ))}
         </tbody>
@@ -91,7 +91,7 @@ const App = () => {
         </label>
         <input
           aria-label="Montant"
-          class="w-full h-12 p-3 rounded-full border bg-inherit text-inherit focus:border-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 focus:ring-offset-white focus:ring-opacity-50"
+          class="w-full h-12 p-3 border bg-inherit text-inherit focus:border-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 focus:ring-offset-white focus:ring-opacity-50"
           id="amount"
           name="amount"
           type="number"
