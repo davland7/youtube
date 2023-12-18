@@ -1,7 +1,7 @@
 import type { Handler, HandlerEvent } from "@netlify/functions";
 
 const CORS_HEADERS = {
-  'Access-Control-Allow-Origin': process.env.ACCESS_CONTROL_ALLOW_ORIGIN as string,
+  'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
   'Access-Control-Allow-Methods': 'GET, POST'
 }
