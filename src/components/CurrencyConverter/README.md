@@ -8,9 +8,11 @@ Calculatrice qui permet de convertir des devises.
 
 ## Exemples
 
-| $ CAD | CHF | ¥ CHF | € EUR | £ GBP | ¥ JPY | $ USD |
-| ----- | --- | ----- | ----- | ----- | ----- | ----- |
-| 1 | 0.64 | 5.41 | 0.68 | 0.59 | 107.41 | 0.76 |
+Avec un montant de 1 CAD, on obtient les montants suivants
+
+| CAD | CHF | CHF | EUR | GBP | JPY | USD |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | 0,64 | 5,41 | 0,68 | 0,59 | 107,41 | 0,76 |
 
 Retour de l'API
 
