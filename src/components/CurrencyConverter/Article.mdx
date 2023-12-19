@@ -1,13 +1,12 @@
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 import devisesImage from "./_a75c1761-511d-4be2-b97d-3190996c8cdb.jpg";
 
 # Convertiseur de devises
 
-<Image
+<Picture
   src={devisesImage}
-  alt="Devises"
-  width="720"
-  height="720"
+  formats={['avif', 'webp']}
+  alt="A description of my image."
 />
 
 ## Application

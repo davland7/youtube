@@ -57,7 +57,7 @@ const App = () => {
   };
 
   return (
-    <div class="p-6 w-full max-w-md m-auto xl:m-0">
+    <div class="w-full max-w-md m-auto xl:m-0 p-5">
       <table class="table-auto w-full min-h-[451px]">
         <thead>
           <tr>
