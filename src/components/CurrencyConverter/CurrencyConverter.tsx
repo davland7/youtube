@@ -78,7 +78,7 @@ const App = () => {
           >
             <td headers="name" class="p-2 border border-black dark:border-white">{item.name}</td>
             <td headers="code" class="p-2 border border-black dark:border-white">{item.code}</td>
-            <td headers="value" class="p-2 border border-black dark:border-white">{getAmount(code, 'fr-CA', item.value)}</td>
+            <td headers="value" class="p-2 border border-black dark:border-white">{getAmount(item.code, 'fr-CA', item.value)}</td>
           </tr>
         ))}
         </tbody>
