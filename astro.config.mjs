@@ -3,6 +3,7 @@ import preact from "@astrojs/preact";
 import tailwind from "@astrojs/tailwind";
 import netlify from "@astrojs/netlify";
 import AstroPWA from "@vite-pwa/astro";
+import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
@@ -39,7 +40,8 @@ export default defineConfig({
       registerType: "autoUpdate"
     }),
     preact(),
-    tailwind()
+    tailwind(),
+    mdx()
   ],
   output: "server",
   adapter: netlify()
