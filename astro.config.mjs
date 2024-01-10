@@ -15,8 +15,8 @@ export default defineConfig({
     AstroPWA({
       devOptions: { enabled: true },
       manifest: {
-        name: "YouTube/@davland7",
-        short_name: "@davland7",
+        name: "code • finance",
+        short_name: "CodeFinance",
         description: "Ma chaine YouTube",
         background_color: "#eab308",
         theme_color: "#eab308",
