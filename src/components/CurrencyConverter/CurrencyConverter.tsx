@@ -14,7 +14,7 @@ interface CurrenciesProps {
   name: string;
 };
 
-const App = () => {
+const CurrencyConverter = () => {
   const [amount, setAmount] = useState<number>(10000);
   const [code, setCode] = useState<string>('CAD');
   const [currencies, setCurrencies] = useState<CurrenciesProps[]>([]);
@@ -103,4 +103,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default CurrencyConverter;
