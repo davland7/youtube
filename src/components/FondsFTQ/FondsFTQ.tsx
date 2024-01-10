@@ -14,13 +14,13 @@ const FondsFTQ = () => {
     const ctx = chartRef.current?.getContext("2d");
     const reversedData = data.slice(0, dataToShow).reverse();
     const labels = reversedData.flatMap((entry) => [
-      `30 Novembre ${entry.year}`,
       `31 Mai ${entry.year}`,
+      `30 Novembre ${entry.year}`,
     ]);
 
     const values = reversedData.flatMap((entry) => [
-      entry.november,
       entry.may,
+      entry.november,
     ]);
 
     if (ctx) {
