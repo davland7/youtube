@@ -19,7 +19,7 @@ const FondsFTQ = () => {
           ]).reverse(),
           datasets: [
             {
-              label: "Prix de l'action",
+              label: "Prix de l’action",
               data: data.flatMap((entry) => [
                 entry.november,
                 entry.may,
@@ -44,26 +44,26 @@ const FondsFTQ = () => {
             tooltip: {
               callbacks: {
                 label: (context) => {
-                  return "Prix : " + formatCurrency(context.parsed.y, 'fr-CA', 'CAD');
+                  return `Prix : ${formatCurrency(context.parsed.y, 'fr-CA', 'CAD')}`;
                 },
               },
             },
           },
         },
       });
-    }
+    };
   }, []);
 
   return (
     <div>
       <canvas
         ref={chartRef}
+        class="my-10"
         aria-hidden="true"
         role="img"
-      >
-      </canvas>
+      />
       <table class="max-w-96 m-auto" id="data">
-        <caption>
+        <caption class="mb-5">
           Historique du prix d'une action
         </caption>
         <thead>
@@ -74,12 +74,12 @@ const FondsFTQ = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((item) => {
+          {data.map(({ year, may, november }) => {
             return (
               <tr>
-                <td headers="year">{item.year}</td>
-                <td headers="may">{formatCurrency(item.may, 'fr-CA', 'CAD')}</td>
-                <td headers="november">{formatCurrency(item.november, 'fr-CA', 'CAD')}</td>
+                <td headers="year">{year}</td>
+                <td headers="may">{formatCurrency(may, 'fr-CA', 'CAD')}</td>
+                <td headers="november">{november && formatCurrency(november, 'fr-CA', 'CAD')}</td>
               </tr>
             );
           })}
