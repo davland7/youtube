@@ -3,61 +3,63 @@ import Chart from "chart.js/auto";
 import { data } from "./data";
 
 const FondsFTQ = () => {
-  const chartRef = useRef(null);
+  const chartRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    const ctx = chartRef.current.getContext("2d");
+    const ctx = chartRef.current?.getContext("2d");
 
-    new Chart(ctx, {
-      type: "line",
-      data: {
-        labels: data.flatMap((entry) => [
-          `30 Novembre ${entry.year}`,
-          `31 Mai ${entry.year}`,
-        ]).reverse(),
-        datasets: [
-          {
-            data: data.flatMap((entry) => [
-              entry.november,
-              entry.may,
-            ]).reverse(),
-            borderColor: "rgba(75, 192, 192, 1)",
-            borderWidth: 2,
-            fill: true,
-          },
-        ],
-      },
-      options: {
-        scales: {
-          y: {
-            ticks: {
-              callback: (value) => {
-                return value.toLocaleString("fr-CA", {
-                  style: "currency",
-                  currency: "CAD",
-                });
-              },
+    if (ctx) {
+      new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: data.flatMap((entry) => [
+            `30 Novembre ${entry.year}`,
+            `31 Mai ${entry.year}`,
+          ]).reverse(),
+          datasets: [
+            {
+              data: data.flatMap((entry) => [
+                entry.november,
+                entry.may,
+              ]).reverse(),
+              borderColor: "rgba(75, 192, 192, 1)",
+              borderWidth: 2,
+              fill: true,
             },
-          },
+          ],
         },
-        plugins: {
-          legend: {
-            display: false,
-          },
-          tooltip: {
-            callbacks: {
-              label: (context) => {
-                return "Prix : " +
-                  new Intl.NumberFormat("fr-CA", {
+        options: {
+          scales: {
+            y: {
+              ticks: {
+                callback: (value) => {
+                  return value.toLocaleString("fr-CA", {
                     style: "currency",
                     currency: "CAD",
-                  }).format(context.parsed.y);
+                  });
+                },
+              },
+            },
+          },
+          plugins: {
+            legend: {
+              display: false,
+            },
+            tooltip: {
+              callbacks: {
+                label: (context) => {
+                  return "Prix : " +
+                    new Intl.NumberFormat("fr-CA", {
+                      style: "currency",
+                      currency: "CAD",
+                    }).format(context.parsed.y);
+                },
               },
             },
           },
         },
-      },
-    });
+      });
+    }
   }, []);
 
   return (
