@@ -26,7 +26,6 @@ const { title, description } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/images/pwa-192x192.png" sizes="192x192" />
 		<meta name="generator" content={Astro.generator} />
-    <base target="_blank">
 		<title>{title}</title>
     <script src="/src/pwa.ts"></script>
     { pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} /> }
