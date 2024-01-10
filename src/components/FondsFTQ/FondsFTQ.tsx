@@ -19,11 +19,12 @@ const FondsFTQ = () => {
           ]).reverse(),
           datasets: [
             {
+              label: "Prix de l'action",
               data: data.flatMap((entry) => [
                 entry.november,
                 entry.may,
               ]).reverse(),
-              borderColor: "rgba(75, 192, 192, 1)",
+              borderColor: "#eab308",
               borderWidth: 2,
               fill: true,
             },
@@ -40,9 +41,6 @@ const FondsFTQ = () => {
             },
           },
           plugins: {
-            legend: {
-              display: false,
-            },
             tooltip: {
               callbacks: {
                 label: (context) => {
@@ -60,8 +58,6 @@ const FondsFTQ = () => {
     <div>
       <canvas
         ref={chartRef}
-        width="960"
-        height="400"
         aria-hidden="true"
         role="img"
       >
