@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'preact/hooks';
+import { formatCurrency } from 'utils';
 
 interface CurrenciesProps {
   code: string;
@@ -16,7 +17,7 @@ interface CurrenciesProps {
 
 const CurrencyConverter = () => {
   const [amount, setAmount] = useState<number>(10000);
-  const [code, setCode] = useState<string>('CAD');
+  const [codeCurrency, setCodeCurrency] = useState<string>('CAD');
   const [currencies, setCurrencies] = useState<CurrenciesProps[]>([]);
 
   const controller = new AbortController();
@@ -43,10 +44,10 @@ const CurrencyConverter = () => {
       return {
         code: currency.code,
         name: currency.name,
-        value: currency.currencies[code as keyof typeof currency.currencies]
+        value: currency.currencies[codeCurrency as keyof typeof currency.currencies]
       };
     });
-  }, [code, currencies]);
+  }, [codeCurrency, currencies]);
 
   const getAmount = (currency: string, locale: string, value: number) => {
     return (value * amount).toLocaleString(locale, {
@@ -67,18 +68,18 @@ const CurrencyConverter = () => {
           </tr>
         </thead>
         <tbody>
-        {getCurrencies.map((item, i) => (
+        {getCurrencies.map(({value, name, code}, i) => (
           <tr
             role="button"
             tabIndex={0}
             key={i}
-            class={`cursor-pointer ${item.code === code ? 'bg-yellow-400 dark:text-black' : ''} `}
-            onClick={() => setCode(item.code)}
-            onKeyDown={(e) => e.key === 'Enter' && setCode(item.code)}
+            class={`cursor-pointer ${code === codeCurrency ? 'bg-yellow-400 dark:text-black' : ''} `}
+            onClick={() => setCodeCurrency(code)}
+            onKeyDown={(e) => e.key === 'Enter' && setCodeCurrency(code)}
           >
-            <td headers="name" class="p-2 border border-black dark:border-white">{item.name}</td>
-            <td headers="code" class="p-2 border border-black dark:border-white">{item.code}</td>
-            <td headers="value" class="p-2 border border-black dark:border-white">{getAmount(item.code, 'fr-CA', item.value)}</td>
+            <td headers="name" class="p-2 border border-black dark:border-white">{name}</td>
+            <td headers="code" class="p-2 border border-black dark:border-white">{code}</td>
+            <td headers="value" class="p-2 border border-black dark:border-white">{formatCurrency(value * amount, 'fr-CA', code)}</td>
           </tr>
         ))}
         </tbody>

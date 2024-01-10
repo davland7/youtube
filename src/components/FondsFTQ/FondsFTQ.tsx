@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "preact/hooks";
 import Chart from "chart.js/auto";
 import { data } from "./data";
+import { formatCurrency } from "utils";
 
 const FondsFTQ = () => {
   const chartRef = useRef<HTMLCanvasElement>(null);
@@ -33,10 +34,7 @@ const FondsFTQ = () => {
             y: {
               ticks: {
                 callback: (value) => {
-                  return value.toLocaleString("fr-CA", {
-                    style: "currency",
-                    currency: "CAD",
-                  });
+                  return formatCurrency(parseFloat(value as string), 'fr-CA', 'CAD');
                 },
               },
             },
@@ -48,11 +46,7 @@ const FondsFTQ = () => {
             tooltip: {
               callbacks: {
                 label: (context) => {
-                  return "Prix : " +
-                    new Intl.NumberFormat("fr-CA", {
-                      style: "currency",
-                      currency: "CAD",
-                    }).format(context.parsed.y);
+                  return "Prix : " + formatCurrency(context.parsed.y, 'fr-CA', 'CAD');
                 },
               },
             },
@@ -88,8 +82,8 @@ const FondsFTQ = () => {
             return (
               <tr>
                 <td headers="year">{item.year}</td>
-                <td headers="may">{item.may}</td>
-                <td headers="november">{item.november}</td>
+                <td headers="may">{formatCurrency(item.may, 'fr-CA', 'CAD')}</td>
+                <td headers="november">{formatCurrency(item.november, 'fr-CA', 'CAD')}</td>
               </tr>
             );
           })}
