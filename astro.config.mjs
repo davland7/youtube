@@ -1,22 +1,18 @@
 import { defineConfig } from "astro/config";
-import preact from "@astrojs/preact";
-import tailwind from "@astrojs/tailwind";
-import netlify from "@astrojs/netlify";
 import AstroPWA from "@vite-pwa/astro";
+import preact from "@astrojs/preact";
 import mdx from '@astrojs/mdx';
+import netlify from "@astrojs/netlify";
+import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  i18n: {
-    defaultLocale: "fr",
-    locales: ["en", "fr"],
-  },
   integrations: [
     AstroPWA({
       devOptions: { enabled: true },
       manifest: {
         name: "code • finance",
-        short_name: "CodeFinance",
+        short_name: "@davland7",
         description: "Ma chaine YouTube",
         background_color: "#eab308",
         theme_color: "#eab308",
@@ -39,9 +35,9 @@ export default defineConfig({
       },
       registerType: "autoUpdate"
     }),
+    mdx(),
     preact(),
-    tailwind(),
-    mdx()
+    tailwind()
   ],
   output: "server",
   adapter: netlify()
