@@ -101,7 +101,7 @@ function NewsletterForm() {
         </label>
         <input
           aria-label="Adresse e-mail"
-          class={`${error ? 'border-red-500' : 'border-black dark:border-white'} w-full h-12 p-3 border rounded-full bg-inherit text-inherit focus:border-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 focus:ring-offset-white focus:ring-opacity-50`}
+          class={`${error ? 'border-red-500' : 'border-black dark:border-white'} w-full p-3 border rounded-md bg-inherit text-inherit focus:border-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 focus:ring-offset-white focus:ring-opacity-50`}
           name="email"
           placeholder="exemple@gmail.com"
           onInput={handleInput}
@@ -110,7 +110,7 @@ function NewsletterForm() {
         />
       </p>
       <button
-        class="p-3 mb-2 border-black dark:border-white border rounded-full bg-yellow-400 disabled:bg-yellow-400 disabled:cursor-not-allowed hover:bg-yellow-500 focus:bg-yellow-500 h-12 w-full mt-5 dark:text-black font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 focus:ring-offset-white focus:ring-opacity-50"
+        class="w-full p-2 border-black dark:border-white border rounded-full bg-yellow-400 disabled:bg-yellow-400 disabled:cursor-not-allowed hover:bg-yellow-500 focus:bg-yellow-500 dark:text-black font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 focus:ring-offset-white focus:ring-opacity-50"
         type="submit"
         aria-label="Je m'abonne"
         disabled={disable}

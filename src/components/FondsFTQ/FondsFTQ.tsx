@@ -99,13 +99,14 @@ const FondsFTQ = () => {
         aria-hidden="true"
         role="img"
       />
-      <div class="max-w-96 m-auto">
-        <input
-          class="p-3 mb-2 border-black dark:border-white border rounded-full bg-yellow-400 disabled:bg-yellow-400 disabled:cursor-not-allowed hover:bg-yellow-500 focus:bg-yellow-500 h-12 w-full mt-5 dark:text-black font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 focus:ring-offset-white focus:ring-opacity-50"
+      <div class="max-w-96 m-auto my-5">
+        <button
+          class="w-full p-2 border-black dark:border-white border rounded-full bg-yellow-400 disabled:bg-yellow-400 disabled:cursor-not-allowed hover:bg-yellow-500 focus:bg-yellow-500 dark:text-black font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 focus:ring-offset-white focus:ring-opacity-50"
           type="button"
-          value="Ajouter"
           onClick={handleChartClick}
-        />
+        >
+          Voir plus
+        </button>
       </div>
       <table class="max-w-96 m-auto" id="data">
         <caption class="mb-5">
