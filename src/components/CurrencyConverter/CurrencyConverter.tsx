@@ -79,7 +79,7 @@ const CurrencyConverter = () => {
           >
             <td headers="name" class="p-2 border border-black dark:border-white">{name}</td>
             <td headers="code" class="p-2 border border-black dark:border-white">{code}</td>
-            <td headers="value" class="p-2 border border-black dark:border-white">{formatCurrency(value * amount, 'fr-CA', code)}</td>
+            <td headers="value" class="p-2 border border-black dark:border-white">{formatCurrency(value * amount, 'fr-CA', code, 10)}</td>
           </tr>
         ))}
         </tbody>
