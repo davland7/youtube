@@ -10,6 +10,7 @@ export default defineConfig({
   integrations: [
     AstroPWA({
       devOptions: { enabled: true },
+      injectRegister: "auto",
       manifest: {
         name: "code • finance",
         short_name: "@davland7",
@@ -33,7 +34,7 @@ export default defineConfig({
           }
         ]
       },
-      registerType: "autoUpdate"
+      registerType: "autoUpdate",
     }),
     mdx(),
     preact(),

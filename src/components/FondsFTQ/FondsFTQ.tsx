@@ -101,12 +101,12 @@ const FondsFTQ = () => {
       />
       <p class="max-w-96 m-auto mb-5">
         <button
-          class="max-w-96 m-auto w-full p-3 leading-6 border-black dark:border-white border rounded-full bg-yellow-400 disabled:bg-yellow-400 disabled:cursor-not-allowed hover:bg-yellow-500 focus:bg-yellow-500 dark:text-black font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 focus:ring-offset-white focus:ring-opacity-50"
+          class="max-w-96 m-auto w-full p-3 leading-normal border-black dark:border-white border rounded-full bg-yellow-400 disabled:bg-yellow-400 disabled:cursor-not-allowed hover:bg-yellow-500 focus:bg-yellow-500 dark:text-black font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 focus:ring-offset-white focus:ring-opacity-50"
           aria-label="Voir plus"
           type="button"
           onClick={handleChartClick}
         >
-          Voir plus
+          Je m’abonne
         </button>
       </p>
       <table class="max-w-96 m-auto" id="data">
