@@ -9,8 +9,8 @@ const MESSAGES = {
 };
 
 function NewsletterForm() {
-  const [error, setError] = useState(false);
   const [disable, setDisable] = useState(true);
+  const [error, setError] = useState(false);
   const [statusMessage, setStatusMessage] = useState('');
 
   const validateEmail = (email: string) => {

@@ -6,9 +6,10 @@ import { formatCurrency } from "utils";
 const DATA_TO_SHOW = 5;
 
 const FondsFTQ = () => {
-  const chartRef = useRef<HTMLCanvasElement>(null);
-  const [dataToShow, setDataToShow] = useState(DATA_TO_SHOW);
   const chartInstanceRef = useRef<Chart | null>(null);
+  const chartRef = useRef<HTMLCanvasElement>(null);
+  const [disable, setDisable] = useState(false);
+  const [dataToShow, setDataToShow] = useState(DATA_TO_SHOW);
 
   const updateChartData = () => {
     const ctx = chartRef.current?.getContext("2d");
@@ -29,18 +30,18 @@ const FondsFTQ = () => {
       }
 
       chartInstanceRef.current = new Chart(ctx, {
-        type: "line",
         data: {
-          labels,
           datasets: [
             {
-              label: "Prix de l’action",
               data: values,
+              label: "Prix de l’action",
+              fill: true,
               borderColor: "#eab308",
               borderWidth: 2,
-              fill: true,
+
             },
           ],
+          labels,
         },
         options: {
           responsive: true,
@@ -63,6 +64,7 @@ const FondsFTQ = () => {
             },
           },
         },
+        type: "line",
       });
     }
   };
@@ -73,9 +75,12 @@ const FondsFTQ = () => {
 
   const handleChartClick = () => {
     const lastData = data[dataToShow - 1];
+
     if (lastData) {
       addData(`30 Novembre ${lastData.year}`, lastData.november);
       setDataToShow((prevDataToShow) => prevDataToShow + DATA_TO_SHOW);
+    } else {
+      setDisable(true);
     }
   };
 
@@ -94,15 +99,16 @@ const FondsFTQ = () => {
   return (
     <div>
       <canvas
-        ref={chartRef}
-        class="my-10"
         aria-hidden="true"
+        class="my-10"
+        ref={chartRef}
         role="img"
       />
       <p class="max-w-96 m-auto mb-5">
         <button
+          aria-label="Ajouter 5 ans"
           class="max-w-96 m-auto w-full p-3 leading-normal border-black dark:border-white border rounded-full bg-yellow-400 disabled:bg-yellow-400 disabled:cursor-not-allowed hover:bg-yellow-500 focus:bg-yellow-500 dark:text-black font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 focus:ring-offset-white focus:ring-opacity-50"
-          aria-label="Voir plus"
+          disabled={disable}
           type="button"
           onClick={handleChartClick}
         >

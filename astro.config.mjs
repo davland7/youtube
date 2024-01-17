@@ -20,7 +20,6 @@ export default defineConfig({
       base: '/',
       scope: '/',
       registerType: "autoUpdate",
-      includeAssets: ['logo.svg'],
       manifest: {
         "background_color": "#eab308",
         "description": "Ma chaine YouTube",
