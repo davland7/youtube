@@ -32,7 +32,6 @@ export default defineConfig({
       registerType: "autoUpdate",
       includeAssets: ['icons/favicon.svg'],
       manifest: {
-        "background_color": "#eab308",
         "description": "Ma chaine YouTube",
         "display": "standalone",
         "icons": [
