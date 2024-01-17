@@ -8,7 +8,8 @@
     "start": "netlify dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "generate-pwa-assets": "pwa-assets-generator --preset minimal-2023 public/logo.svg"
   },
   "dependencies": {
     "@astrojs/check": "^0.3.4",
@@ -29,6 +30,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "@testing-library/preact": "^3.2.3",
     "@types/node": "^20.10.7",
+    "@vite-pwa/assets-generator": "^0.2.3",
     "@vite-pwa/astro": "^0.2.0",
     "vite-plugin-pwa": "^0.17.4",
     "workbox-window": "^7.0.0"
