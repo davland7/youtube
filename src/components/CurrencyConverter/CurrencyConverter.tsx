@@ -49,14 +49,6 @@ const CurrencyConverter = () => {
     });
   }, [codeCurrency, currencies]);
 
-  const getAmount = (currency: string, locale: string, value: number) => {
-    return (value * amount).toLocaleString(locale, {
-      currency,
-      minimumSignificantDigits: 10,
-      style: 'currency'
-    });
-  };
-
   return (
     <div class="w-full max-w-md m-auto xl:m-0">
       <table class="table-auto w-full min-h-[451px]">

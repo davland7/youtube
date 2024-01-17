@@ -57,7 +57,7 @@ function NewsletterForm() {
             setError(true);
           }
         })
-        .catch((error) => {
+        .catch(() => {
           setStatusMessage(MESSAGES.error);
           setError(true);
         });

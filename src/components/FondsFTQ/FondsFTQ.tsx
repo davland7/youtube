@@ -106,7 +106,7 @@ const FondsFTQ = () => {
           type="button"
           onClick={handleChartClick}
         >
-          Je m’abonne
+          Ajouter 5 ans
         </button>
       </p>
       <table class="max-w-96 m-auto" id="data">

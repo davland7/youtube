@@ -1,12 +1,12 @@
-import type { Handler, HandlerEvent } from "@netlify/functions";
+import type { Handler } from "@netlify/functions";
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
   'Access-Control-Allow-Methods': 'GET, POST'
-}
+};
 
-const handler: Handler = async (event: HandlerEvent) => {
+const handler: Handler = async () => {
   try {
     const response = await fetch(process.env.GOOGLE_SHEETS_URL as string);
 
