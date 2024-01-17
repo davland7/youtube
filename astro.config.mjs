@@ -40,6 +40,7 @@ export default defineConfig({
             "purpose": "maskable"
           }
         ],
+        "id": "/?source=pwa",
         "lang": "fr",
         "launcherName": "code • finance",
         "name": "code • finance",
