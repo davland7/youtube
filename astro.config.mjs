@@ -48,7 +48,8 @@ export default defineConfig({
         "orientation": "portrait",
         "scope": "/",
         "short_name": "@davland7",
-        "start_url": "/?source=pwa"
+        "start_url": "/?source=pwa",
+        "theme_color": "#ffffff"
       },
     }),
     mdx(),
