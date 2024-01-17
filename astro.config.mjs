@@ -10,6 +10,8 @@ export default defineConfig({
   integrations: [
     AstroPWA({
       devOptions: { enabled: true },
+      registerType: 'autoUpdate',
+      includeAssets: ['favicon.ico', 'robots.txt', 'icons/apple-touch-icon.png'],
       manifest: {
         "background_color": "#eab308",
         "description": "Ma chaine YouTube",
@@ -46,11 +48,6 @@ export default defineConfig({
         "short_name": "@davland7",
         "start_url": "/?source=pwa",
         "theme_color": "#eab308"
-      },
-      registerType: "autoUpdate",
-      workbox: {
-        cleanupOutdatedCaches: true,
-        directoryIndex: 'index.html',
       },
     }),
     mdx(),
