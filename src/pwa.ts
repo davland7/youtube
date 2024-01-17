@@ -7,19 +7,10 @@ registerSW({
   },
   onOfflineReady() {
     console.log('PWA application ready to work offline');
-
-    // Exemple de notification
-    showNotification('PWA Prête', 'L\'application est prête à fonctionner hors ligne!');
+  },
+  onNeedRefresh() {
+    if (confirm('Une nouvelle version est disponible. Voulez-vous mettre à jour?')) {
+      location.reload();
+    }
   },
 });
-
-function showNotification(title: string, message: string) {
-  // Vérifier si le navigateur prend en charge les notifications
-  if ('Notification' in window) {
-    Notification.requestPermission().then((permission) => {
-      if (permission === 'granted') {
-        new Notification(title, { body: message });
-      }
-    });
-  }
-}
