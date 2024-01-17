@@ -48,7 +48,7 @@ export default defineConfig({
             "src": "maskable-icon-512x512.png",
             "sizes": "512x512",
             "type": "image/png",
-            "purpose": "maskable"
+            "purpose": "any maskable"
           }
         ],
         "id": "/?source=pwa",
@@ -58,7 +58,8 @@ export default defineConfig({
         "scope": "/",
         "short_name": "@davland7",
         "start_url": "/?source=pwa",
-        "theme_color": "#eab308"
+        "theme_color": "#eab308",
+        "background_color": "#000000"
       },
     }),
     mdx(),
