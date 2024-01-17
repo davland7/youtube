@@ -40,11 +40,11 @@ export default defineConfig({
             "purpose": "maskable"
           }
         ],
-        "id": "/?source=pwa",
+        "id": "code-finance-app",
         "lang": "fr",
-        "launcherName": "code • finance",
         "name": "code • finance",
         "orientation": "portrait",
+        "scope": "/",
         "short_name": "@davland7",
         "start_url": "/?source=pwa",
         "theme_color": "#eab308"
