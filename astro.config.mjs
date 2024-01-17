@@ -9,10 +9,6 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [
     AstroPWA({
-      workbox: {
-        navigateFallback: '/',
-        globPatterns: ['**/*.{css,js,html,svg,png,ico,txt}'],
-      },
       devOptions: {
         enabled: true,
       },
@@ -21,7 +17,6 @@ export default defineConfig({
       scope: '/',
       registerType: "autoUpdate",
       manifest: {
-        "background_color": "#eab308",
         "description": "Ma chaine YouTube",
         "display": "standalone",
         "icons": [
@@ -45,7 +40,7 @@ export default defineConfig({
             "sizes": "512x512",
             "type": "image/png",
             "purpose": "maskable"
-          }
+          },
         ],
         "id": "/?source=pwa",
         "lang": "fr",
@@ -54,7 +49,6 @@ export default defineConfig({
         "scope": "/",
         "short_name": "@davland7",
         "start_url": "/?source=pwa",
-        "theme_color": "#eab308"
       },
     }),
     mdx(),
