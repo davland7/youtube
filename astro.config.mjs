@@ -7,12 +7,6 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  vite: {
-    logLevel: 'info',
-    define: {
-      __DATE__: `'${new Date().toISOString()}'`,
-    },
-  },
   integrations: [
     AstroPWA({
       workbox: {
