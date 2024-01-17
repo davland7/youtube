@@ -40,7 +40,7 @@ export default defineConfig({
             "sizes": "512x512",
             "type": "image/png",
             "purpose": "maskable"
-          },
+          }
         ],
         "id": "/?source=pwa",
         "lang": "fr",
@@ -48,7 +48,7 @@ export default defineConfig({
         "orientation": "portrait",
         "scope": "/",
         "short_name": "@davland7",
-        "start_url": "/?source=pwa",
+        "start_url": "/?source=pwa"
       },
     }),
     mdx(),
