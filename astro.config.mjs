@@ -11,7 +11,6 @@ export default defineConfig({
     AstroPWA({
       devOptions: { enabled: true },
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'robots.txt', 'icons/apple-touch-icon.png'],
       manifest: {
         "background_color": "#eab308",
         "description": "Ma chaine YouTube",
