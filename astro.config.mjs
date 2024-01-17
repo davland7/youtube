@@ -7,10 +7,30 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
+  vite: {
+    logLevel: 'info',
+    define: {
+      __DATE__: `'${new Date().toISOString()}'`,
+    },
+  },
   integrations: [
     AstroPWA({
-      devOptions: { enabled: true },
-      registerType: 'autoUpdate',
+      workbox: {
+        navigateFallback: '/',
+        globPatterns: ['**/*.{css,js,html,svg,png,ico,txt}'],
+      },
+      devOptions: {
+        enabled: true,
+        navigateFallbackAllowlist: [/^\//],
+      },
+      experimental: {
+        directoryAndTrailingSlashHandler: true,
+      },
+      mode: 'development',
+      base: '/',
+      scope: '/',
+      registerType: "autoUpdate",
+      includeAssets: ['icons/favicon.svg'],
       manifest: {
         "background_color": "#eab308",
         "description": "Ma chaine YouTube",
@@ -22,12 +42,6 @@ export default defineConfig({
             "type": "image/png",
           },
           {
-            "src": "icons/android-chrome-maskable-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png",
-            "purpose": "maskable"
-          },
-          {
             "src": "icons/android-chrome-512x512.png",
             "sizes": "512x512",
             "type": "image/png",
@@ -36,7 +50,7 @@ export default defineConfig({
             "src": "icons/android-chrome-maskable-512x512.png",
             "sizes": "512x512",
             "type": "image/png",
-            "purpose": "maskable"
+            "purpose": "any maskable"
           }
         ],
         "id": "code-finance-app",
