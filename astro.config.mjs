@@ -10,45 +10,46 @@ export default defineConfig({
   integrations: [
     AstroPWA({
       devOptions: { enabled: true },
-      injectRegister: "auto",
       manifest: {
-        name: "code • finance",
-        short_name: "@davland7",
-        description: "Ma chaine YouTube",
-        background_color: "#eab308",
-        theme_color: "#eab308",
-        orientation: "portrait",
-        id: "/?source=pwa",
-        start_url: "/?source=pwa",
-        scope: "/",
-        lang: "fr",
-        display: "standalone",
-        icons: [
+        "background_color": "#eab308",
+        "description": "Ma chaine YouTube",
+        "display": "standalone",
+        "icons": [
           {
-            src: "icons/android-chrome-192x192.png",
-            sizes: "192x192",
-            type: "image/png"
+            "src": "icons/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
           },
           {
-            src: "icons/android-chrome-maskable-192x192.png",
-            sizes: "192x192",
-            type: "image/png",
-            purpose: "maskable"
+            "src": "icons/android-chrome-maskable-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
           },
           {
-            src: "icons/android-chrome-512x512.png",
-            sizes: "512x512",
-            type: "image/png"
+            "src": "icons/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
           },
           {
-            src: "icons/android-chrome-maskable-512x512.png",
-            sizes: "512x512",
-            type: "image/png",
-            purpose: "maskable"
+            "src": "icons/android-chrome-maskable-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
           }
-        ]
+        ],
+        "lang": "fr",
+        "name": "code • finance",
+        "orientation": "portrait",
+        "short_name": "@davland7",
+        "start_url": "/?source=pwa",
+        "theme_color": "#eab308"
       },
       registerType: "autoUpdate",
+      workbox: {
+        cleanupOutdatedCaches: true,
+        directoryIndex: 'index.html',
+      },
     }),
     mdx(),
     preact(),
