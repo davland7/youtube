@@ -24,7 +24,8 @@ const { title, description } = Astro.props;
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/images/pwa-192x192.png" sizes="192x192" />
+    <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png"/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
     <script src="/src/pwa.ts"></script>
