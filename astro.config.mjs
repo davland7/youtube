@@ -21,6 +21,8 @@ export default defineConfig({
         id: "/?source=pwa",
         start_url: "/?source=pwa",
         scope: "/",
+        lang: "fr",
+        display: "standalone",
         icons: [
           {
             src: "icons/android-chrome-192x192.png",
