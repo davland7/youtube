@@ -15,17 +15,14 @@ export default defineConfig({
       },
       devOptions: {
         enabled: true,
-        navigateFallbackAllowlist: [/^\//],
-      },
-      experimental: {
-        directoryAndTrailingSlashHandler: true,
       },
       mode: 'development',
       base: '/',
       scope: '/',
       registerType: "autoUpdate",
-      includeAssets: ['icons/favicon.svg'],
+      includeAssets: ['logo.svg'],
       manifest: {
+        "background_color": "#eab308",
         "description": "Ma chaine YouTube",
         "display": "standalone",
         "icons": [
@@ -42,8 +39,7 @@ export default defineConfig({
           {
             "src": "pwa-512x512.png",
             "sizes": "512x512",
-            "type": "image/png",
-            "purpose": "any"
+            "type": "image/png"
           },
           {
             "src": "maskable-icon-512x512.png",
