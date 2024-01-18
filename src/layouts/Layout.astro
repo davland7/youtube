@@ -1,4 +1,5 @@
 ---
+import CookieConsentBanner from '@components/CookieConsentBanner.tsx';
 import { pwaInfo } from "virtual:pwa-info";
 
 interface Props {
@@ -12,6 +13,22 @@ const { title, description } = Astro.props;
 <!doctype html>
 <html lang="fr">
 	<head>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+
+      if (localStorage.getItem('consentMode') === null) {
+        gtag('consent', 'default', {
+          'ad_storage': 'denied',
+          'analytics_storage': 'denied',
+          'personalization_storage': 'denied',
+          'functionality_storage': 'denied',
+          'security_storage': 'denied',
+        });
+      } else {
+        gtag('consent', 'default', JSON.parse(localStorage.getItem('consentMode')));
+      }
+    </script>
     <!-- Google Tag Manager -->
     <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -32,5 +49,6 @@ const { title, description } = Astro.props;
 	</head>
 	<body class="mt-12 dark:bg-black dark:text-white selection:bg-yellow-400 selection:text-black">
     <slot />
+    <CookieConsentBanner client:idle />
 	</body>
 </html>
