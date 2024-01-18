@@ -74,25 +74,26 @@ const CookieConsentBanner = () => {
       </p>
       <button
         onClick={handleAcceptAll}
-        class="bg-green-500 m-1 px-2 py-1 rounded text-sm text-white hover:bg-green-600"
+        class="m-1 px-2 py-1 rounded text-sm bg-green-500 hover:bg-green-600 text-white"
       >
         Tout accepter
       </button>
       <button
         onClick={handleAcceptSome}
-        class="bg-green-50 m-1 px-2 py-1 rounded text-sm text-green-500 hover:bg-green-100"
+        class="m-1 px-2 py-1 rounded text-sm bg-green-50 hover:bg-green-100 text-green-500"
       >
         Accepter la sélection
       </button>
       <button
         onClick={handleRejectAll}
-        class="bg-gray-300 m-1 px-2 py-1 rounded text-sm text-black hover:bg-gray-400"
+        class="m-1 px-2 py-1 rounded text-sm bg-gray-300 hover:bg-gray-400 text-black"
       >
         Tout refuser
       </button>
       <div class="flex justify-center flex-wrap mt-4">
         <label class="flex items-center justify-center m-2 gap-1 text-sm cursor-pointer">
           <input
+            class=""
             type="checkbox"
             checked={true}
             disabled={true}
