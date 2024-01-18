@@ -102,6 +102,7 @@ function NewsletterForm() {
         <input
           aria-label="Adresse e-mail"
           class={`${error ? 'border-red-500' : 'border-black dark:border-white'} w-full p-3 border rounded-full bg-inherit text-inherit focus:border-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 focus:ring-offset-white focus:ring-opacity-50`}
+          id="email"
           name="email"
           placeholder="exemple@gmail.com"
           onInput={handleInput}
