@@ -90,7 +90,7 @@ const CookieConsentBanner = () => {
       >
         Tout refuser
       </button>
-      <div class="flex justify-center flex-wrap mb-2">
+      <div class="flex justify-center flex-wrap mt-4">
         <label class="flex items-center justify-center m-2 gap-1 text-sm cursor-pointer">
           <input
             type="checkbox"
