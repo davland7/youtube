@@ -74,13 +74,13 @@ const CookieConsentBanner = () => {
       </p>
       <button
         onClick={handleAcceptAll}
-        class="m-1 px-2 py-1 rounded text-sm bg-green-500 hover:bg-green-600 text-white"
+        class="m-1 px-2 py-1 rounded text-sm bg-green-700 hover:bg-green-800 text-white"
       >
         Tout accepter
       </button>
       <button
         onClick={handleAcceptSome}
-        class="m-1 px-2 py-1 rounded text-sm bg-green-50 hover:bg-green-100 text-green-500"
+        class="m-1 px-2 py-1 rounded text-sm bg-green-50 hover:bg-green-100 text-green-700"
       >
         Accepter la sélection
       </button>
