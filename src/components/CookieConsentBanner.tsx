@@ -67,7 +67,7 @@ const CookieConsentBanner = () => {
   };
 
   return (
-    <div class={`bottom-0 left-0 right-0 bg-gray-100 shadow-md text-black p-4 text-center z-50 transform transition-transform duration-300 ${hideBanner ? '-translate-y-full' : 'translate-y-0'}`}>
+    <div class={`bottom-0 left-0 right-0 bg-gray-100 shadow-md text-black p-4 text-center z-50 transform transition-transform duration-300 ${hideBanner ? 'translate-y-0' : '-translate-y-full'}`}>
       <h3 class="m-1 text-lg font-semibold">Paramètres des cookies</h3>
       <p class="m-2 text-sm">
         Nous utilisons des cookies pour vous offrir la meilleure expérience possible. Ils nous permettent également d’analyser le comportement des utilisateurs afin d’améliorer constamment le site Web pour vous.
