@@ -68,7 +68,9 @@ const CookieConsentBanner = () => {
 
   return (
     <div class={`fixed bottom-0 inset-x-0 bg-gray-100 text-black p-4 text-center z-50 transform transition-transform duration-300 ${hideBanner ? 'translate-y-full' : 'translate-y-0'}`}>
-      <h3 class="m-1 text-lg font-semibold">Paramètres des cookies</h3>
+      <h3 class="m-1 text-lg font-semibold">
+        Paramètres des cookies
+      </h3>
       <p class="m-2 text-sm">
         Nous utilisons des cookies pour vous offrir la meilleure expérience possible. Ils nous permettent également d’analyser le comportement des utilisateurs afin d’améliorer constamment le site Web pour vous.
       </p>
@@ -91,33 +93,52 @@ const CookieConsentBanner = () => {
         Tout refuser
       </button>
       <div class="flex justify-center flex-wrap mt-4">
-        <label class="flex items-center justify-center m-2 gap-1 text-sm cursor-pointer">
+        <label
+          class="flex items-center justify-center m-2 gap-1 text-sm cursor-pointer"
+          for="necessary"
+        >
           <input
-            class=""
+            id="necessary"
+            name="necessary"
             type="checkbox"
             checked={true}
             disabled={true}
           />
           Nécessaire
         </label>
-        <label class="flex items-center justify-center m-2 gap-1 text-sm cursor-pointer">
+        <label
+          class="flex items-center justify-center m-2 gap-1 text-sm cursor-pointer"
+          for="analytics"
+        >
           <input
+            id="analytics"
+            name="analytics"
             type="checkbox"
             checked={analyticsChecked}
             onChange={() => setAnalyticsChecked(!analyticsChecked)}
           />
           Analytiques
         </label>
-        <label class="flex items-center justify-center m-2 gap-1 text-sm cursor-pointer">
+        <label
+          class="flex items-center justify-center m-2 gap-1 text-sm cursor-pointer"
+          for="preferences"
+        >
           <input
+            id="preferences"
+            name="preferences"
             type="checkbox"
             checked={preferencesChecked}
             onChange={() => setPreferencesChecked(!preferencesChecked)}
           />
           Préférences
         </label>
-        <label class="flex items-center justify-center m-2 gap-1 text-sm cursor-pointer">
+        <label
+          class="flex items-center justify-center m-2 gap-1 text-sm cursor-pointer"
+          for="marketing"
+        >
           <input
+            id="marketing"
+            name="marketing"
             type="checkbox"
             checked={marketingChecked}
             onChange={() => setMarketingChecked(!marketingChecked)}

@@ -102,7 +102,7 @@ function NewsletterForm() {
         <input
           aria-label="Adresse e-mail"
           autocomplete="off"
-          class={`${error ? 'border-red-500' : 'border-black dark:border-white'} w-full p-3 border rounded-full bg-inherit text-inherit focus:border-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 focus:ring-offset-white focus:ring-opacity-50`}
+          class={`${error ? 'border-red-500' : 'border-black dark:border-white'} w-full p-3 border rounded-full bg-inherit text-inherit focus:border-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 focus:ring-offset-white`}
           id="email"
           name="email"
           placeholder="exemple@gmail.com"
@@ -112,7 +112,7 @@ function NewsletterForm() {
         />
       </p>
       <button
-        class="w-full p-3 border-black dark:border-white border rounded-full bg-yellow-400 disabled:bg-gray-200 disabled:cursor-not-allowed hover:bg-yellow-500 focus:bg-yellow-500 dark:text-black font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 focus:ring-offset-white focus:ring-opacity-50"
+        class="w-full p-3 border-black dark:border-white border rounded-full bg-yellow-400 disabled:bg-gray-200 disabled:cursor-not-allowed hover:bg-yellow-500 focus:bg-yellow-500 dark:text-black font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 focus:ring-offset-white"
         type="submit"
         aria-label="Je m’abonne"
         disabled={disable}

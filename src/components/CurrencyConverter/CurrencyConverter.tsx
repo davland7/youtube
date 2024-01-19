@@ -84,7 +84,7 @@ const CurrencyConverter = () => {
         </label>
         <input
           aria-label="Montant"
-          class="w-full h-12 p-3 border rounded-md bg-inherit text-inherit focus:border-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 focus:ring-offset-white focus:ring-opacity-50"
+          class="w-full h-12 p-3 border rounded-md bg-inherit text-inherit focus:border-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 focus:ring-offset-white"
           id="amount"
           name="amount"
           type="number"
