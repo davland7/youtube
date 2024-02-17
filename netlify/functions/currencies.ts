@@ -47,7 +47,7 @@ const handler: Handler = async () => {
         ...CORS_HEADERS,
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(currencies)
+      body: JSON.stringify(currencies, null, 2)
     };
   } catch (error: any) {
     return {
