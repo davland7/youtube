@@ -13,9 +13,20 @@ import devisesImage from './_a75c1761-511d-4be2-b97d-3190996c8cdb.jpg';
 
 Calculatrice qui permet de convertir des devises.
 
-## Exemples
+## Récupération des devises
 
-Avec un montant de 1 CAD, on obtient les montants suivants
+Avec Google sheets, on peut récupérer les devises en utilisant la fonction suivante.
+Par exemple, pour obtenir le taux de change entre le dollar canadien (CAD) et le dollar américain (USD), on utilise la fonction suivante.
+
+```
+=GOOGLEFINANCE("CURRENCY:CADUSD")
+```
+Voir la documentation de [Google Sheets](https://support.google.com/docs/answer/3093281?hl=fr)
+
+
+## Fonctionnalités
+
+Le 17 février 2024 avec un montant de 1$ canadien, on obtient les montants suivants pour les devises suivantes.
 
 | CAD | CHF | CNY | EUR | GBP | JPY | USD |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -28,34 +39,40 @@ Retour de l'API
   {
     "code": "CAD",
     "currencies": {
-        "CAD": 1,
-        "CHF": 0.6381630236,
-        "CNY": 5.407640159,
-        "EUR": 0.6817854821,
-        "GBP": 0.591617762,
-        "JPY": 107.4065797,
-        "USD": 0.75720289
+      "CAD": 1,
+      "CHF": 0.6527659799,
+      "CNY": 5.276628742,
+      "EUR": 0.6874743,
+      "GBP": 0.5881304278,
+      "JPY": 111.3411,
+      "USD": 0.741162
     },
     "name": "Dollar canadien"
   }
 ]
 ```
 
-La fonction native toLocalString permet de formater un nombre en fonction de la langue et de la devise(CAD).
+La fonction native `Intl.NumberFormat` est utilisée pour formater les montants.
+Par exemple, pour formater un montant de 1000 en devise canadienne (CAD), la fonction va retourner 1 000,00 $.
 
 ```typescript
 export const formatCurrency = (
   value: number,
   locale: string,
   currency: string,
-  minimumSignificantDigits: number = 2
+  digits: number = 2
 ):string => {
-  return value.toLocaleString(locale, {
+  return new Intl.NumberFormat(locale, {
+    style: 'currency',
     currency,
-    minimumSignificantDigits,
-    style: "currency",
-  });
+    useGrouping: true,
+    currencyDisplay: 'narrowSymbol',
+    minimumFractionDigits: digits,
+    maximumFractionDigits: digits
+  }).format(value);
 };
+
+formatCurrency(1000, 'fr-CA', 'CAD'); // 1 000,00 $
 ```
 
 ## Histoire des devises

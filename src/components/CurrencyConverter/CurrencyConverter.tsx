@@ -15,12 +15,6 @@ interface CurrenciesProps {
   name: string;
 };
 
-interface Currency {
-  code: string;
-  currencies: { [key: string]: number };
-  name: string;
-};
-
 const CurrencyConverter = () => {
   const [amount, setAmount] = useState<number>(10000);
   const [codeCurrency, setCodeCurrency] = useState<string>('CAD');
@@ -45,18 +39,22 @@ const CurrencyConverter = () => {
     };
   }, []);
 
+  const currencyMap = useMemo(() => {
+    const map = new Map();
+    currencies.forEach(currency => map.set(currency.code, currency));
+    return map;
+  }, [currencies]);
+
   const getCurrencies = useMemo(() => {
-    const selectedCurrency: Currency | undefined = currencies.find((currency: Currency) => currency.code === codeCurrency);
+    const selectedCurrency = currencyMap.get(codeCurrency);
     if (!selectedCurrency) return [];
 
-    return currencies.map((currency: Currency, i) => {
-      return {
-        code: currency.code,
-        name: currency.name,
-        value: selectedCurrency.currencies[currency.code] || 0
-      };
-    });
-  }, [codeCurrency, currencies]);
+    return Array.from(currencyMap.values()).map(currency => ({
+      code: currency.code,
+      name: currency.name,
+      value: selectedCurrency.currencies[currency.code] || 0
+    }));
+  }, [codeCurrency, currencyMap]);
 
   return (
     <div class="w-full max-w-md m-auto xl:m-0">
