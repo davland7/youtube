@@ -1,4 +1,4 @@
-import { formatCurrency } from '../utils';
+import { formatCurrency } from './utils';
 
 describe('formatCurrency', () => {
   it('should format number to currency string', () => {
