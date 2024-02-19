@@ -19,7 +19,7 @@ Aujourd'hui, les devises sont plus que de simples instruments d'échange ; elles
 
 ## Application
 
-Calculatrice qui permet de convertir des devises.
+Calculatrice qui permet de convertir des devises. Sélectionnez une devise dans le tableau pour obtenir le montant converti dans les autres devises. Vous pouvez également saisir un montant dans la devise de départ pour obtenir le montant dans le champ en dessous.
 
 ## Récupération des devises
 
@@ -27,20 +27,23 @@ Avec Google sheets, on peut récupérer les devises en utilisant la fonction sui
 Par exemple, pour obtenir le taux de change entre le dollar canadien (CAD) et le dollar américain (USD), on utilise la fonction suivante.
 
 ```
-=GOOGLEFINANCE("CURRENCY:CADUSD")
+=GOOGLEFINANCE("CURRENCY:CADUSD") // 0.741162
+=GOOGLEFINANCE("CURRENCY:USDCAD") // 1.349295
 ```
 Voir la documentation de [Google Sheets](https://support.google.com/docs/answer/3093281?hl=fr)
 
 
-## Fonctionnalités
+## API
 
-Le 17 février 2024 avec un montant de 1$ canadien, on obtient les montants suivants pour les devises suivantes.
+Après avoir récupéré le data de Google Finance dans Google Sheets, on peut créé une API pour récupérer les devises et les convertir en JSON.
+
+Par exemple le 17 février 2024 avec un montant de 1$ canadien, on obtient les montants suivants pour les devises suivantes.
 
 | CAD | CHF | CNY | EUR | GBP | JPY | USD |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | 0,64 | 5,41 | 0,68 | 0,59 | 107,41 | 0,76 |
+| 1 | 0,65 | 5,28 | 0,69 | 0,59 | 111,34 | 0,74 |
 
-Retour de l'API
+Résultat en JSON après conversion.
 
 ```Json
 [
@@ -59,6 +62,7 @@ Retour de l'API
   }
 ]
 ```
+## Formater les montants dans la devise locale
 
 La fonction native `Intl.NumberFormat` est utilisée pour formater les montants.
 Par exemple, pour formater un montant de 1000 en devise canadienne (CAD), la fonction va retourner 1 000,00 $.
@@ -81,6 +85,7 @@ export const formatCurrency = (
 };
 
 formatCurrency(1000, 'fr-CA', 'CAD'); // 1 000,00 $
+formatCurrency(1000, 'en-US', 'USD'); // $1,000.00
 ```
 
 ### useGrouping
