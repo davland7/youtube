@@ -107,7 +107,7 @@ const FondsFTQ = () => {
       <p class="max-w-96 m-auto mb-5">
         <button
           aria-label="Ajouter 5 ans"
-          class="max-w-96 m-auto w-full p-3 leading-normal border-black dark:border-white border rounded-full bg-yellow-400 disabled:bg-yellow-400 disabled:cursor-not-allowed hover:bg-yellow-500 focus:bg-yellow-500 dark:text-black font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 focus:ring-offset-white"
+          class="max-w-96 m-auto w-full p-3 rounded bg-yellow-500 hover:bg-yellow-600 disabled:bg-gray-200 disabled:cursor-not-allowed text-black font-bold"
           disabled={disable}
           type="button"
           onClick={handleChartClick}

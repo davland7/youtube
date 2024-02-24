@@ -56,14 +56,21 @@ const CurrencyConverter = () => {
     }));
   }, [codeCurrency, currencyMap]);
 
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      setCodeCurrency((e.target as HTMLTableRowElement).cells[1]?.textContent ?? '');
+    }
+  }
+
   return (
     <div class="w-full max-w-md m-auto xl:m-0">
-      <table class="table-auto w-full min-h-[451px]">
+      <table class="table-auto w-full min-h-[457px]">
         <thead>
           <tr>
-            <th id="name" class="px-2 py-4 border border-black dark:border-white">Nom</th>
-            <th id="code" class="px-2 py-4 border border-black dark:border-white">Code</th>
-            <th id="value" class="px-2 py-4 border border-black dark:border-white">Valeur</th>
+            <th id="name" class="px-2 py-4 bg-gray-200 border border-black dark:border-white">Nom</th>
+            <th id="code" class="px-2 py-4 bg-gray-200 border border-black dark:border-white">Code</th>
+            <th id="value" class="px-2 py-4 bg-gray-200 border border-black dark:border-white">Valeur</th>
           </tr>
         </thead>
         <tbody>
@@ -72,13 +79,13 @@ const CurrencyConverter = () => {
             role="button"
             tabIndex={0}
             key={i}
-            class={`cursor-pointer ${code === codeCurrency ? 'bg-yellow-400 dark:text-black' : ''} `}
+            class={`cursor-pointer ${code === codeCurrency ? 'bg-yellow-500 dark:text-black' : ''} `}
             onClick={() => setCodeCurrency(code)}
-            onKeyDown={(e) => e.key === 'Enter' && setCodeCurrency(code)}
+            onKeyDown={handleKeyDown}
           >
-            <td headers="name" class="p-2 border border-black dark:border-white">{name}</td>
-            <td headers="code" class="p-2 border border-black dark:border-white">{code}</td>
-            <td headers="value" class="p-2 border border-black dark:border-white">{formatCurrency(value * amount, 'fr-CA', code, 10)}</td>
+            <td headers="name" class="px-2 py-4 border border-black dark:border-white">{name}</td>
+            <td headers="code" class="px-2 py-4 border border-black dark:border-white">{code}</td>
+            <td headers="value" class="px-2 py-4 border border-black dark:border-white">{formatCurrency(value * amount, 'fr-CA', code, 10)}</td>
           </tr>
         ))}
         </tbody>
@@ -91,7 +98,7 @@ const CurrencyConverter = () => {
         </label>
         <input
           aria-label="Montant"
-          class="w-full h-12 p-3 border rounded-md bg-inherit text-inherit focus:border-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 focus:ring-offset-white"
+          class="w-full p-3 border-black rounded bg-inherit text-inherit"
           id="amount"
           name="amount"
           type="number"
