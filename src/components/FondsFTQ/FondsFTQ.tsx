@@ -7,12 +7,12 @@ const DATA_TO_SHOW = 5;
 
 const FondsFTQ = () => {
   const chartInstanceRef = useRef<Chart | null>(null);
-  const chartRef = useRef<HTMLCanvasElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
   const [disable, setDisable] = useState(false);
   const [dataToShow, setDataToShow] = useState(DATA_TO_SHOW);
 
   const updateChartData = () => {
-    const ctx = chartRef.current?.getContext("2d");
+    const ctx = canvasRef.current?.getContext("2d");
     const reversedData = data.slice(0, dataToShow).reverse();
     const labels = reversedData.flatMap((entry) => [
       `31 Mai ${entry.year}`,
@@ -27,6 +27,7 @@ const FondsFTQ = () => {
     if (ctx) {
       if (chartInstanceRef.current) {
         chartInstanceRef.current.destroy();
+        chartInstanceRef.current = null;
       }
 
       chartInstanceRef.current = new Chart(ctx, {
@@ -36,9 +37,8 @@ const FondsFTQ = () => {
               data: values,
               label: "Prix de l’action",
               fill: true,
-              borderColor: "#eab308",
+              borderColor: "#ecc94b",
               borderWidth: 2,
-
             },
           ],
           labels,
@@ -47,11 +47,15 @@ const FondsFTQ = () => {
           responsive: true,
           scales: {
             y: {
+              grid: { color: "#e2e8f0" },
               ticks: {
                 callback: (value) => {
                   return formatCurrency(parseFloat(value as string), 'fr-CA', 'CAD');
                 },
               },
+            },
+            x: {
+              grid: { color: "#e2e8f0" },
             },
           },
           plugins: {
@@ -87,37 +91,44 @@ const FondsFTQ = () => {
   const addData = (label: unknown, newData: number | [number, number] | Point | null) => {
     if (chartInstanceRef.current) {
       if (label && newData !== null) {
-        chartInstanceRef?.current?.data?.labels?.push(label);
+        if (chartInstanceRef.current.data.labels) {
+          chartInstanceRef.current.data.labels.push(label);
+        }
         chartInstanceRef.current.data.datasets.forEach((dataset) => {
           dataset.data.push(newData);
         });
         chartInstanceRef.current.update();
       }
-    };
+    }
   };
 
   return (
-    <div>
+    <div
+      class="mt-12"
+    >
       <canvas
         aria-hidden="true"
-        class="my-10"
-        ref={chartRef}
+        id="chart"
+        ref={canvasRef}
         role="img"
       />
-      <p class="max-w-96 m-auto mb-5">
-        <button
-          aria-label="Ajouter 5 ans"
-          class="max-w-96 m-auto w-full p-3 rounded bg-yellow-500 hover:bg-yellow-600 disabled:bg-gray-200 disabled:cursor-not-allowed text-black font-bold"
-          disabled={disable}
-          type="button"
-          onClick={handleChartClick}
+      <button
+        aria-label="Ajouter 5 ans"
+        class="block w-full max-w-96 mt-4 m-auto p-2 rounded bg-yellow-500 border border-yellow-500 hover:bg-yellow-600 hover:border-yellow-600 disabled:bg-gray-200 disabled:border-gray-200 disabled:cursor-not-allowed text-black font-bold text-base"
+        disabled={disable}
+        type="button"
+        onClick={handleChartClick}
+      >
+        Ajouter 5 ans
+      </button>
+      <table
+        class="max-w-96 mt-4 m-auto"
+        id="data"
+      >
+        <caption
+          class="my-4"
         >
-          Ajouter 5 ans
-        </button>
-      </p>
-      <table class="max-w-96 m-auto" id="data">
-        <caption class="mb-5">
-          Historique du prix d'une action
+          Historique du prix d’une action
         </caption>
         <thead>
           <tr>

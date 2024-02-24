@@ -65,12 +65,12 @@ const CurrencyConverter = () => {
 
   return (
     <div class="w-full max-w-md m-auto xl:m-0">
-      <table class="table-auto w-full min-h-[457px]">
+      <table class="w-full min-h-[457px]">
         <thead>
           <tr>
-            <th id="name" class="px-2 py-4 bg-gray-200 border border-black dark:border-white">Nom</th>
-            <th id="code" class="px-2 py-4 bg-gray-200 border border-black dark:border-white">Code</th>
-            <th id="value" class="px-2 py-4 bg-gray-200 border border-black dark:border-white">Valeur</th>
+            <th id="name" class="px-2 py-4 border border-black dark:border-white">Nom</th>
+            <th id="code" class="px-2 py-4 border border-black dark:border-white">Code</th>
+            <th id="value" class="px-2 py-4 border border-black dark:border-white">Valeur</th>
           </tr>
         </thead>
         <tbody>
@@ -98,7 +98,7 @@ const CurrencyConverter = () => {
         </label>
         <input
           aria-label="Montant"
-          class="w-full p-3 border-black rounded bg-inherit text-inherit"
+          class="w-full mt-4 p-2 rounded bg-inherit text-inherit"
           id="amount"
           name="amount"
           type="number"

@@ -110,7 +110,7 @@ function NewsletterForm() {
         required
       />
       <button
-        class="w-full mt-4 p-2 rounded bg-yellow-500 hover:bg-yellow-600 border border-yellow-500 disabled:bg-gray-200 disabled:border-gray-200 disabled:cursor-not-allowed text-black font-bold"
+        class="w-full mt-4 p-2 rounded bg-yellow-500 border border-yellow-500 hover:bg-yellow-600 hover:border-yellow-600 disabled:bg-gray-200 disabled:border-gray-200 disabled:cursor-not-allowed text-black font-bold text-base"
         type="submit"
         aria-label="Je m’abonne"
         disabled={disable}
