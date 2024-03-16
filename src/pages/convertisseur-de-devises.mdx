@@ -1,16 +1,14 @@
-import { Picture } from 'astro:assets';
-import devisesImage from './_a75c1761-511d-4be2-b97d-3190996c8cdb.jpg';
+---
+layout: '@layouts/Layout.astro'
+title: 'Convertiseur de devises'
+description: 'Convertiseur de devises'
+---
+
+import CurrencyConverter from '@components/CurrencyConverter/CurrencyConverter';
 
 # Convertiseur de devises
 
 [Accueil](/) / Convertiseur de devises
-
-<Picture
-  class="mt-16"
-  src={devisesImage}
-  formats={['avif', 'webp']}
-  alt="A description of my image."
-/>
 
 ## Histoire des devises
 
@@ -22,7 +20,9 @@ Aujourd'hui, les devises sont plus que de simples instruments d'échange ; elles
 
 ## Application
 
-Calculatrice qui permet de convertir des devises. Sélectionnez une devise dans le tableau pour obtenir le montant converti dans les autres devises. Vous pouvez également saisir un montant dans la devise de départ pour obtenir le montant dans le champ en dessous.
+La calculatrice permet de convertir les 7 devises. Sélectionnez une devise dans le tableau pour obtenir le montant converti dans les autres devises. Vous pouvez également saisir un montant dans la devise de départ pour obtenir le montant dans le champ en dessous.
+
+<CurrencyConverter client:load />
 
 ## Récupération des devises
 
@@ -34,7 +34,6 @@ Par exemple, pour obtenir le taux de change entre le dollar canadien (CAD) et le
 =GOOGLEFINANCE("CURRENCY:USDCAD") // 1.349295
 ```
 Voir la documentation de [Google Sheets](https://support.google.com/docs/answer/3093281?hl=fr)
-
 
 ## API
 
@@ -100,6 +99,6 @@ Le paramètre va retourner le symbole de la devise en format court. Par exemple,
 ### minimumFractionDigits et maximumFractionDigits
 Les paramètres vont permettre de définir le nombre de chiffres après la virgule. Par exemple, pour 1000,00, le nombre de chiffres après la virgule est de 2.
 
-## Code et vidéo
+## Conclusion
 
-- [GitHub](https://github.com/davland7/youtube/tree/main/src/components/CurrencyConverter)
+Une morale à l'histoire, on peut dire que les devises sont un outil essentiel pour comprendre les dynamiques économiques et commerciales mondiales. En comprenant les taux de change et les mécanismes de conversion, on peut mieux appréhender les enjeux financiers et les opportunités d'investissement à l'échelle internationale. En fin de compte, les devises sont un reflet de la complexité et de la diversité de l'économie mondiale, et leur histoire continue de s'écrire au fil des évolutions économiques et technologiques.

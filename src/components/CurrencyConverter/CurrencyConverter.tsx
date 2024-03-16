@@ -64,7 +64,7 @@ const CurrencyConverter = () => {
   }
 
   return (
-    <div class="w-full max-w-md m-auto xl:m-0">
+    <div class="w-full max-w-md my-12 m-auto">
       <table class="w-full min-h-[457px]">
         <thead>
           <tr>

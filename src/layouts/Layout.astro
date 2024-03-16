@@ -1,5 +1,5 @@
 ---
-import { pwaInfo } from "virtual:pwa-info";
+import NewsletterForm from '@components/NewsletterForm';
 
 interface Props {
 	title: string;
@@ -30,10 +30,37 @@ const { title, description } = Astro.props;
     <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png" />
 		<title>{title}</title>
-    <script src="/src/pwa.ts"></script>
-    { pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} /> }
 	</head>
-	<body class="mt-12 dark:bg-black dark:text-white">
-    <slot />
+	<body class="dark:bg-black dark:text-white">
+    <main class="w-full max-w-screen-md m-auto p-5">
+      <header class="flex justify-center m-10 p-5">
+        Ce site est pour instruire et divertir. Il n'est pas affilié à YouTube.
+      </header>
+      <section>
+        <article class="prose-base prose-a:underline hover:prose-a:no-underline prose-table:table-auto prose-table:w-full prose-th:px-2 prose-th:py-4 prose-th:border prose-th:border-black prose-th:dark:border-white prose-th:text-left prose-td:p-2 prose-td:border prose-td:border-black prose-td:dark:border-white prose-ul:list-disc">
+          <slot />
+        </article>
+      </section>
+      <section class="w-full max-w-md my-12 m-auto">
+        <div class="flex flex-col items-center text-center">
+          <h2 class="mt-4 text-2xl font-bold">
+            Abonnes-toi à ma newsletter
+          </h2>
+          <p class="mt-2">
+            Reste informé de mes dernières actualités et annonces en t’inscrivant à ma newsletter.
+          </p>
+          <NewsletterForm client:load />
+          <p class="mt-4 max-w-xs text-xs">
+            Tu pourras te désabonner à tout moment en cliquant sur le lien en bas de chaque e-mail.
+          </p>
+        </div>
+      </section>
+      <footer class="flex justify-center m-10 p-5">
+        <a href="https://www.youtube.com/@davland7">
+          <img class="dark:hidden" width="192" height="43" src="/images/yt_logo_rgb_light.png" alt="YouTube Logo" />
+          <img class="hidden dark:block" width="192" height="43" src="/images/yt_logo_rgb_dark.png" alt="YouTube Logo" />
+        </a>
+      </footer>
+    </main>
 	</body>
 </html>

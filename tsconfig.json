@@ -12,10 +12,7 @@
     "types": [
       "astro/client",
       "jest",
-      "vite-plugin-pwa/client",
-      "vite-plugin-pwa/info",
     ],
-    "module": "es2020",
     "verbatimModuleSyntax": false
   }
 }
