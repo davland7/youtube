@@ -2,8 +2,7 @@
 import NewsletterForm from '@components/NewsletterForm';
 
 interface Props {
-	title: string;
-	description: string;
+  frontmatter: any; // Add the frontmatter property to the Props interface
 }
 
 const { frontmatter } = Astro.props;
