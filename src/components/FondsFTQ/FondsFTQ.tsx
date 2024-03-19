@@ -114,7 +114,7 @@ const FondsFTQ = () => {
       />
       <button
         aria-label="Ajouter 5 ans"
-        class="block w-full max-w-96 mt-4 m-auto p-2 rounded bg-yellow-500 border border-yellow-500 hover:bg-yellow-600 hover:border-yellow-600 disabled:bg-gray-200 disabled:border-gray-200 disabled:cursor-not-allowed text-black font-bold text-base"
+        class="block w-full max-w-md mt-4 m-auto p-2 rounded bg-yellow-500 border border-yellow-500 hover:bg-yellow-600 hover:border-yellow-600 disabled:bg-gray-200 disabled:border-gray-200 disabled:cursor-not-allowed text-black font-bold text-base"
         disabled={disable}
         type="button"
         onClick={handleChartClick}
@@ -122,7 +122,7 @@ const FondsFTQ = () => {
         Ajouter 5 ans
       </button>
       <table
-        class="max-w-96 mt-4 m-auto"
+        class="max-w-md mt-4 m-auto"
         id="data"
       >
         <caption
