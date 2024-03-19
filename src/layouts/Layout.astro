@@ -6,7 +6,7 @@ interface Props {
 	description: string;
 }
 
-const { title, description } = Astro.props;
+const { frontmatter } = Astro.props;
 ---
 
 <!doctype html>
@@ -22,14 +22,14 @@ const { title, description } = Astro.props;
       gtag('config', 'G-L13ZVMKVRM');
     </script>
 		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
+		<meta name="description" content={frontmatter.description} />
     <meta name="theme-color" content="#ffffff" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png" />
-		<title>{title}</title>
+		<title>{frontmatter.title}</title>
 	</head>
 	<body class="dark:bg-black dark:text-white">
     <main class="w-full max-w-screen-md m-auto p-5">
